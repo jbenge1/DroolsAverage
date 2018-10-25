@@ -1,0 +1,28 @@
+#created on: Oct 17, 2018
+package Sample
+
+import com.techgap.DroolsAverage.DroolsAverage.EmployeeClass.Employee;
+
+rule "One"
+    when
+          e : Employee( calculate == 0, 
+                      hours    : weeklyHours,
+                      totHours : totalHours)
+    then
+        #System.out.println("Hours worked => " + hours + " Total hours possible => " + totHours);
+        e.setPerformance1((java.math.BigDecimal)hours/(java.math.BigDecimal)totHours);
+        #System.out.println(e.getName() +"'s performance score is " + e.getPerformance1());
+        #System.out.println("_____________________________________________");
+
+end
+
+rule "Two"
+	when 
+		e : Employee( calculate == 0,
+					  rate    : rate,
+					  pay     : totalPay,
+					  hours   : weeklyHours,
+					  totHours: totalHours)
+	then
+		e.setPerformance2(rate);
+end

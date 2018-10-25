@@ -1,0 +1,1382 @@
+<object-stream>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [1]</activationId>
+  <rule>One</rule>
+  <declarations>e=Aide Mcentyre&apos;s performance score is (1); hours=40(1); totHours=50(1)</declarations>
+  <type>4</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [1]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=400.0(1); hours=40(1); e=Aide Mcentyre&apos;s performance score is (1); rate=10.0(1); totHours=50(1)</declarations>
+  <type>4</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <factId>1</factId>
+  <objectToString>Aide Mcentyre&apos;s performance score is </objectToString>
+  <type>1</type>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [1]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=400.0(1); hours=40(1); e=Aide Mcentyre&apos;s performance score is (1); rate=10.0(1); totHours=50(1)</declarations>
+  <type>6</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [1]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=400.0(1); hours=40(1); e=Aide Mcentyre&apos;s performance score is (1); rate=10.0(1); totHours=50(1)</declarations>
+  <type>7</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [1]</activationId>
+  <rule>One</rule>
+  <declarations>e=Aide Mcentyre&apos;s performance score is (1); hours=40(1); totHours=50(1)</declarations>
+  <type>6</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [1]</activationId>
+  <rule>One</rule>
+  <declarations>e=Aide Mcentyre&apos;s performance score is (1); hours=40(1); totHours=50(1)</declarations>
+  <type>7</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <factId>1</factId>
+  <objectToString>Aide Mcentyre&apos;s performance score is </objectToString>
+  <type>3</type>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [2]</activationId>
+  <rule>One</rule>
+  <declarations>e=Lashandra Pestana&apos;s performance score is (2); hours=40(2); totHours=50(2)</declarations>
+  <type>4</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [2]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=600.0(2); hours=40(2); e=Lashandra Pestana&apos;s performance score is (2); rate=15.0(2); totHours=50(2)</declarations>
+  <type>4</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <factId>2</factId>
+  <objectToString>Lashandra Pestana&apos;s performance score is </objectToString>
+  <type>1</type>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [2]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=600.0(2); hours=40(2); e=Lashandra Pestana&apos;s performance score is (2); rate=15.0(2); totHours=50(2)</declarations>
+  <type>6</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [2]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=600.0(2); hours=40(2); e=Lashandra Pestana&apos;s performance score is (2); rate=15.0(2); totHours=50(2)</declarations>
+  <type>7</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [2]</activationId>
+  <rule>One</rule>
+  <declarations>e=Lashandra Pestana&apos;s performance score is (2); hours=40(2); totHours=50(2)</declarations>
+  <type>6</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [2]</activationId>
+  <rule>One</rule>
+  <declarations>e=Lashandra Pestana&apos;s performance score is (2); hours=40(2); totHours=50(2)</declarations>
+  <type>7</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <factId>2</factId>
+  <objectToString>Lashandra Pestana&apos;s performance score is </objectToString>
+  <type>3</type>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [3]</activationId>
+  <rule>One</rule>
+  <declarations>e=Anissa Fajardo&apos;s performance score is (3); hours=40(3); totHours=50(3)</declarations>
+  <type>4</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [3]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=454.0(3); hours=40(3); e=Anissa Fajardo&apos;s performance score is (3); rate=11.35(3); totHours=50(3)</declarations>
+  <type>4</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <factId>3</factId>
+  <objectToString>Anissa Fajardo&apos;s performance score is </objectToString>
+  <type>1</type>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [3]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=454.0(3); hours=40(3); e=Anissa Fajardo&apos;s performance score is (3); rate=11.35(3); totHours=50(3)</declarations>
+  <type>6</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [3]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=454.0(3); hours=40(3); e=Anissa Fajardo&apos;s performance score is (3); rate=11.35(3); totHours=50(3)</declarations>
+  <type>7</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [3]</activationId>
+  <rule>One</rule>
+  <declarations>e=Anissa Fajardo&apos;s performance score is (3); hours=40(3); totHours=50(3)</declarations>
+  <type>6</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [3]</activationId>
+  <rule>One</rule>
+  <declarations>e=Anissa Fajardo&apos;s performance score is (3); hours=40(3); totHours=50(3)</declarations>
+  <type>7</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <factId>3</factId>
+  <objectToString>Anissa Fajardo&apos;s performance score is </objectToString>
+  <type>3</type>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [4]</activationId>
+  <rule>One</rule>
+  <declarations>e=Mercedes Carrion&apos;s performance score is (4); hours=32(4); totHours=50(4)</declarations>
+  <type>4</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [4]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=1200.0(4); hours=32(4); e=Mercedes Carrion&apos;s performance score is (4); rate=37.5(4); totHours=50(4)</declarations>
+  <type>4</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <factId>4</factId>
+  <objectToString>Mercedes Carrion&apos;s performance score is </objectToString>
+  <type>1</type>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [4]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=1200.0(4); hours=32(4); e=Mercedes Carrion&apos;s performance score is (4); rate=37.5(4); totHours=50(4)</declarations>
+  <type>6</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [4]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=1200.0(4); hours=32(4); e=Mercedes Carrion&apos;s performance score is (4); rate=37.5(4); totHours=50(4)</declarations>
+  <type>7</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [4]</activationId>
+  <rule>One</rule>
+  <declarations>e=Mercedes Carrion&apos;s performance score is (4); hours=32(4); totHours=50(4)</declarations>
+  <type>6</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [4]</activationId>
+  <rule>One</rule>
+  <declarations>e=Mercedes Carrion&apos;s performance score is (4); hours=32(4); totHours=50(4)</declarations>
+  <type>7</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <factId>4</factId>
+  <objectToString>Mercedes Carrion&apos;s performance score is </objectToString>
+  <type>3</type>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [5]</activationId>
+  <rule>One</rule>
+  <declarations>e=Gertha Fredrick&apos;s performance score is (5); hours=31(5); totHours=50(5)</declarations>
+  <type>4</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [5]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=440.2(5); hours=31(5); e=Gertha Fredrick&apos;s performance score is (5); rate=14.2(5); totHours=50(5)</declarations>
+  <type>4</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <factId>5</factId>
+  <objectToString>Gertha Fredrick&apos;s performance score is </objectToString>
+  <type>1</type>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [5]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=440.2(5); hours=31(5); e=Gertha Fredrick&apos;s performance score is (5); rate=14.2(5); totHours=50(5)</declarations>
+  <type>6</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [5]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=440.2(5); hours=31(5); e=Gertha Fredrick&apos;s performance score is (5); rate=14.2(5); totHours=50(5)</declarations>
+  <type>7</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [5]</activationId>
+  <rule>One</rule>
+  <declarations>e=Gertha Fredrick&apos;s performance score is (5); hours=31(5); totHours=50(5)</declarations>
+  <type>6</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [5]</activationId>
+  <rule>One</rule>
+  <declarations>e=Gertha Fredrick&apos;s performance score is (5); hours=31(5); totHours=50(5)</declarations>
+  <type>7</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <factId>5</factId>
+  <objectToString>Gertha Fredrick&apos;s performance score is </objectToString>
+  <type>3</type>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [6]</activationId>
+  <rule>One</rule>
+  <declarations>e=Vannesa Backus&apos;s performance score is (6); hours=35(6); totHours=50(6)</declarations>
+  <type>4</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [6]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=1050.0(6); hours=35(6); e=Vannesa Backus&apos;s performance score is (6); rate=30.0(6); totHours=50(6)</declarations>
+  <type>4</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <factId>6</factId>
+  <objectToString>Vannesa Backus&apos;s performance score is </objectToString>
+  <type>1</type>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [6]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=1050.0(6); hours=35(6); e=Vannesa Backus&apos;s performance score is (6); rate=30.0(6); totHours=50(6)</declarations>
+  <type>6</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [6]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=1050.0(6); hours=35(6); e=Vannesa Backus&apos;s performance score is (6); rate=30.0(6); totHours=50(6)</declarations>
+  <type>7</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [6]</activationId>
+  <rule>One</rule>
+  <declarations>e=Vannesa Backus&apos;s performance score is (6); hours=35(6); totHours=50(6)</declarations>
+  <type>6</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [6]</activationId>
+  <rule>One</rule>
+  <declarations>e=Vannesa Backus&apos;s performance score is (6); hours=35(6); totHours=50(6)</declarations>
+  <type>7</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <factId>6</factId>
+  <objectToString>Vannesa Backus&apos;s performance score is </objectToString>
+  <type>3</type>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [7]</activationId>
+  <rule>One</rule>
+  <declarations>e=Marth Christen&apos;s performance score is (7); hours=45(7); totHours=50(7)</declarations>
+  <type>4</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [7]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=585.0(7); hours=45(7); e=Marth Christen&apos;s performance score is (7); rate=13.0(7); totHours=50(7)</declarations>
+  <type>4</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <factId>7</factId>
+  <objectToString>Marth Christen&apos;s performance score is </objectToString>
+  <type>1</type>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [7]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=585.0(7); hours=45(7); e=Marth Christen&apos;s performance score is (7); rate=13.0(7); totHours=50(7)</declarations>
+  <type>6</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [7]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=585.0(7); hours=45(7); e=Marth Christen&apos;s performance score is (7); rate=13.0(7); totHours=50(7)</declarations>
+  <type>7</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [7]</activationId>
+  <rule>One</rule>
+  <declarations>e=Marth Christen&apos;s performance score is (7); hours=45(7); totHours=50(7)</declarations>
+  <type>6</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [7]</activationId>
+  <rule>One</rule>
+  <declarations>e=Marth Christen&apos;s performance score is (7); hours=45(7); totHours=50(7)</declarations>
+  <type>7</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <factId>7</factId>
+  <objectToString>Marth Christen&apos;s performance score is </objectToString>
+  <type>3</type>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [8]</activationId>
+  <rule>One</rule>
+  <declarations>e=Bernard Zell&apos;s performance score is (8); hours=31(8); totHours=50(8)</declarations>
+  <type>4</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [8]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=1736.0(8); hours=31(8); e=Bernard Zell&apos;s performance score is (8); rate=56.0(8); totHours=50(8)</declarations>
+  <type>4</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <factId>8</factId>
+  <objectToString>Bernard Zell&apos;s performance score is </objectToString>
+  <type>1</type>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [8]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=1736.0(8); hours=31(8); e=Bernard Zell&apos;s performance score is (8); rate=56.0(8); totHours=50(8)</declarations>
+  <type>6</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [8]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=1736.0(8); hours=31(8); e=Bernard Zell&apos;s performance score is (8); rate=56.0(8); totHours=50(8)</declarations>
+  <type>7</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [8]</activationId>
+  <rule>One</rule>
+  <declarations>e=Bernard Zell&apos;s performance score is (8); hours=31(8); totHours=50(8)</declarations>
+  <type>6</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [8]</activationId>
+  <rule>One</rule>
+  <declarations>e=Bernard Zell&apos;s performance score is (8); hours=31(8); totHours=50(8)</declarations>
+  <type>7</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <factId>8</factId>
+  <objectToString>Bernard Zell&apos;s performance score is </objectToString>
+  <type>3</type>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [9]</activationId>
+  <rule>One</rule>
+  <declarations>e=Ericka Derosier&apos;s performance score is (9); hours=13(9); totHours=50(9)</declarations>
+  <type>4</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [9]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=318.5(9); hours=13(9); e=Ericka Derosier&apos;s performance score is (9); rate=24.5(9); totHours=50(9)</declarations>
+  <type>4</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <factId>9</factId>
+  <objectToString>Ericka Derosier&apos;s performance score is </objectToString>
+  <type>1</type>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [9]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=318.5(9); hours=13(9); e=Ericka Derosier&apos;s performance score is (9); rate=24.5(9); totHours=50(9)</declarations>
+  <type>6</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [9]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=318.5(9); hours=13(9); e=Ericka Derosier&apos;s performance score is (9); rate=24.5(9); totHours=50(9)</declarations>
+  <type>7</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [9]</activationId>
+  <rule>One</rule>
+  <declarations>e=Ericka Derosier&apos;s performance score is (9); hours=13(9); totHours=50(9)</declarations>
+  <type>6</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [9]</activationId>
+  <rule>One</rule>
+  <declarations>e=Ericka Derosier&apos;s performance score is (9); hours=13(9); totHours=50(9)</declarations>
+  <type>7</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <factId>9</factId>
+  <objectToString>Ericka Derosier&apos;s performance score is </objectToString>
+  <type>3</type>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [10]</activationId>
+  <rule>One</rule>
+  <declarations>e=Caleb Janney&apos;s performance score is (10); hours=23(10); totHours=50(10)</declarations>
+  <type>4</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [10]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=563.5(10); hours=23(10); e=Caleb Janney&apos;s performance score is (10); rate=24.5(10); totHours=50(10)</declarations>
+  <type>4</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <factId>10</factId>
+  <objectToString>Caleb Janney&apos;s performance score is </objectToString>
+  <type>1</type>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [10]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=563.5(10); hours=23(10); e=Caleb Janney&apos;s performance score is (10); rate=24.5(10); totHours=50(10)</declarations>
+  <type>6</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [10]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=563.5(10); hours=23(10); e=Caleb Janney&apos;s performance score is (10); rate=24.5(10); totHours=50(10)</declarations>
+  <type>7</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [10]</activationId>
+  <rule>One</rule>
+  <declarations>e=Caleb Janney&apos;s performance score is (10); hours=23(10); totHours=50(10)</declarations>
+  <type>6</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [10]</activationId>
+  <rule>One</rule>
+  <declarations>e=Caleb Janney&apos;s performance score is (10); hours=23(10); totHours=50(10)</declarations>
+  <type>7</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <factId>10</factId>
+  <objectToString>Caleb Janney&apos;s performance score is </objectToString>
+  <type>3</type>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [11]</activationId>
+  <rule>One</rule>
+  <declarations>e=Roslyn Crosswell&apos;s performance score is (11); hours=12(11); totHours=50(11)</declarations>
+  <type>4</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [11]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=650.4(11); hours=12(11); e=Roslyn Crosswell&apos;s performance score is (11); rate=54.2(11); totHours=50(11)</declarations>
+  <type>4</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <factId>11</factId>
+  <objectToString>Roslyn Crosswell&apos;s performance score is </objectToString>
+  <type>1</type>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [11]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=650.4(11); hours=12(11); e=Roslyn Crosswell&apos;s performance score is (11); rate=54.2(11); totHours=50(11)</declarations>
+  <type>6</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [11]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=650.4(11); hours=12(11); e=Roslyn Crosswell&apos;s performance score is (11); rate=54.2(11); totHours=50(11)</declarations>
+  <type>7</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [11]</activationId>
+  <rule>One</rule>
+  <declarations>e=Roslyn Crosswell&apos;s performance score is (11); hours=12(11); totHours=50(11)</declarations>
+  <type>6</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [11]</activationId>
+  <rule>One</rule>
+  <declarations>e=Roslyn Crosswell&apos;s performance score is (11); hours=12(11); totHours=50(11)</declarations>
+  <type>7</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <factId>11</factId>
+  <objectToString>Roslyn Crosswell&apos;s performance score is </objectToString>
+  <type>3</type>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [12]</activationId>
+  <rule>One</rule>
+  <declarations>e=Rayna Drrico&apos;s performance score is (12); hours=43(12); totHours=50(12)</declarations>
+  <type>4</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [12]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=2327.59(12); hours=43(12); e=Rayna Drrico&apos;s performance score is (12); rate=54.13(12); totHours=50(12)</declarations>
+  <type>4</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <factId>12</factId>
+  <objectToString>Rayna Drrico&apos;s performance score is </objectToString>
+  <type>1</type>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [12]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=2327.59(12); hours=43(12); e=Rayna Drrico&apos;s performance score is (12); rate=54.13(12); totHours=50(12)</declarations>
+  <type>6</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [12]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=2327.59(12); hours=43(12); e=Rayna Drrico&apos;s performance score is (12); rate=54.13(12); totHours=50(12)</declarations>
+  <type>7</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [12]</activationId>
+  <rule>One</rule>
+  <declarations>e=Rayna Drrico&apos;s performance score is (12); hours=43(12); totHours=50(12)</declarations>
+  <type>6</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [12]</activationId>
+  <rule>One</rule>
+  <declarations>e=Rayna Drrico&apos;s performance score is (12); hours=43(12); totHours=50(12)</declarations>
+  <type>7</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <factId>12</factId>
+  <objectToString>Rayna Drrico&apos;s performance score is </objectToString>
+  <type>3</type>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [13]</activationId>
+  <rule>One</rule>
+  <declarations>e=Bridgett Castlebery&apos;s performance score is (13); hours=43(13); totHours=50(13)</declarations>
+  <type>4</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [13]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=2270.4(13); hours=43(13); e=Bridgett Castlebery&apos;s performance score is (13); rate=52.8(13); totHours=50(13)</declarations>
+  <type>4</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <factId>13</factId>
+  <objectToString>Bridgett Castlebery&apos;s performance score is </objectToString>
+  <type>1</type>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [13]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=2270.4(13); hours=43(13); e=Bridgett Castlebery&apos;s performance score is (13); rate=52.8(13); totHours=50(13)</declarations>
+  <type>6</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [13]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=2270.4(13); hours=43(13); e=Bridgett Castlebery&apos;s performance score is (13); rate=52.8(13); totHours=50(13)</declarations>
+  <type>7</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [13]</activationId>
+  <rule>One</rule>
+  <declarations>e=Bridgett Castlebery&apos;s performance score is (13); hours=43(13); totHours=50(13)</declarations>
+  <type>6</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [13]</activationId>
+  <rule>One</rule>
+  <declarations>e=Bridgett Castlebery&apos;s performance score is (13); hours=43(13); totHours=50(13)</declarations>
+  <type>7</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <factId>13</factId>
+  <objectToString>Bridgett Castlebery&apos;s performance score is </objectToString>
+  <type>3</type>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [14]</activationId>
+  <rule>One</rule>
+  <declarations>e=Desiree Seeting&apos;s performance score is (14); hours=42(14); totHours=50(14)</declarations>
+  <type>4</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [14]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=4121.46(14); hours=42(14); e=Desiree Seeting&apos;s performance score is (14); rate=98.13(14); totHours=50(14)</declarations>
+  <type>4</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <factId>14</factId>
+  <objectToString>Desiree Seeting&apos;s performance score is </objectToString>
+  <type>1</type>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [14]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=4121.46(14); hours=42(14); e=Desiree Seeting&apos;s performance score is (14); rate=98.13(14); totHours=50(14)</declarations>
+  <type>6</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [14]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=4121.46(14); hours=42(14); e=Desiree Seeting&apos;s performance score is (14); rate=98.13(14); totHours=50(14)</declarations>
+  <type>7</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [14]</activationId>
+  <rule>One</rule>
+  <declarations>e=Desiree Seeting&apos;s performance score is (14); hours=42(14); totHours=50(14)</declarations>
+  <type>6</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [14]</activationId>
+  <rule>One</rule>
+  <declarations>e=Desiree Seeting&apos;s performance score is (14); hours=42(14); totHours=50(14)</declarations>
+  <type>7</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <factId>14</factId>
+  <objectToString>Desiree Seeting&apos;s performance score is </objectToString>
+  <type>3</type>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [15]</activationId>
+  <rule>One</rule>
+  <declarations>e=Mui Bonenfant&apos;s performance score is (15); hours=19(15); totHours=50(15)</declarations>
+  <type>4</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [15]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=380.0(15); hours=19(15); e=Mui Bonenfant&apos;s performance score is (15); rate=20.0(15); totHours=50(15)</declarations>
+  <type>4</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <factId>15</factId>
+  <objectToString>Mui Bonenfant&apos;s performance score is </objectToString>
+  <type>1</type>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [15]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=380.0(15); hours=19(15); e=Mui Bonenfant&apos;s performance score is (15); rate=20.0(15); totHours=50(15)</declarations>
+  <type>6</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [15]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=380.0(15); hours=19(15); e=Mui Bonenfant&apos;s performance score is (15); rate=20.0(15); totHours=50(15)</declarations>
+  <type>7</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [15]</activationId>
+  <rule>One</rule>
+  <declarations>e=Mui Bonenfant&apos;s performance score is (15); hours=19(15); totHours=50(15)</declarations>
+  <type>6</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [15]</activationId>
+  <rule>One</rule>
+  <declarations>e=Mui Bonenfant&apos;s performance score is (15); hours=19(15); totHours=50(15)</declarations>
+  <type>7</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <factId>15</factId>
+  <objectToString>Mui Bonenfant&apos;s performance score is </objectToString>
+  <type>3</type>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [16]</activationId>
+  <rule>One</rule>
+  <declarations>e=Reba Prasad&apos;s performance score is (16); hours=38(16); totHours=50(16)</declarations>
+  <type>4</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [16]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=2061.5(16); hours=38(16); e=Reba Prasad&apos;s performance score is (16); rate=54.25(16); totHours=50(16)</declarations>
+  <type>4</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <factId>16</factId>
+  <objectToString>Reba Prasad&apos;s performance score is </objectToString>
+  <type>1</type>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [16]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=2061.5(16); hours=38(16); e=Reba Prasad&apos;s performance score is (16); rate=54.25(16); totHours=50(16)</declarations>
+  <type>6</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [16]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=2061.5(16); hours=38(16); e=Reba Prasad&apos;s performance score is (16); rate=54.25(16); totHours=50(16)</declarations>
+  <type>7</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [16]</activationId>
+  <rule>One</rule>
+  <declarations>e=Reba Prasad&apos;s performance score is (16); hours=38(16); totHours=50(16)</declarations>
+  <type>6</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [16]</activationId>
+  <rule>One</rule>
+  <declarations>e=Reba Prasad&apos;s performance score is (16); hours=38(16); totHours=50(16)</declarations>
+  <type>7</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <factId>16</factId>
+  <objectToString>Reba Prasad&apos;s performance score is </objectToString>
+  <type>3</type>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [17]</activationId>
+  <rule>One</rule>
+  <declarations>e=Janae Orum&apos;s performance score is (17); hours=27(17); totHours=50(17)</declarations>
+  <type>4</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [17]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=940.95(17); hours=27(17); e=Janae Orum&apos;s performance score is (17); rate=34.85(17); totHours=50(17)</declarations>
+  <type>4</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <factId>17</factId>
+  <objectToString>Janae Orum&apos;s performance score is </objectToString>
+  <type>1</type>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [17]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=940.95(17); hours=27(17); e=Janae Orum&apos;s performance score is (17); rate=34.85(17); totHours=50(17)</declarations>
+  <type>6</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [17]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=940.95(17); hours=27(17); e=Janae Orum&apos;s performance score is (17); rate=34.85(17); totHours=50(17)</declarations>
+  <type>7</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [17]</activationId>
+  <rule>One</rule>
+  <declarations>e=Janae Orum&apos;s performance score is (17); hours=27(17); totHours=50(17)</declarations>
+  <type>6</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [17]</activationId>
+  <rule>One</rule>
+  <declarations>e=Janae Orum&apos;s performance score is (17); hours=27(17); totHours=50(17)</declarations>
+  <type>7</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <factId>17</factId>
+  <objectToString>Janae Orum&apos;s performance score is </objectToString>
+  <type>3</type>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [18]</activationId>
+  <rule>One</rule>
+  <declarations>e=Lura Storment&apos;s performance score is (18); hours=12(18); totHours=50(18)</declarations>
+  <type>4</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [18]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=650.4(18); hours=12(18); e=Lura Storment&apos;s performance score is (18); rate=54.2(18); totHours=50(18)</declarations>
+  <type>4</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <factId>18</factId>
+  <objectToString>Lura Storment&apos;s performance score is </objectToString>
+  <type>1</type>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [18]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=650.4(18); hours=12(18); e=Lura Storment&apos;s performance score is (18); rate=54.2(18); totHours=50(18)</declarations>
+  <type>6</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [18]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=650.4(18); hours=12(18); e=Lura Storment&apos;s performance score is (18); rate=54.2(18); totHours=50(18)</declarations>
+  <type>7</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [18]</activationId>
+  <rule>One</rule>
+  <declarations>e=Lura Storment&apos;s performance score is (18); hours=12(18); totHours=50(18)</declarations>
+  <type>6</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [18]</activationId>
+  <rule>One</rule>
+  <declarations>e=Lura Storment&apos;s performance score is (18); hours=12(18); totHours=50(18)</declarations>
+  <type>7</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <factId>18</factId>
+  <objectToString>Lura Storment&apos;s performance score is </objectToString>
+  <type>3</type>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [19]</activationId>
+  <rule>One</rule>
+  <declarations>e=Twanda Crooms&apos;s performance score is (19); hours=10(19); totHours=50(19)</declarations>
+  <type>4</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [19]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=130.0(19); hours=10(19); e=Twanda Crooms&apos;s performance score is (19); rate=13.0(19); totHours=50(19)</declarations>
+  <type>4</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <factId>19</factId>
+  <objectToString>Twanda Crooms&apos;s performance score is </objectToString>
+  <type>1</type>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [19]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=130.0(19); hours=10(19); e=Twanda Crooms&apos;s performance score is (19); rate=13.0(19); totHours=50(19)</declarations>
+  <type>6</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [19]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=130.0(19); hours=10(19); e=Twanda Crooms&apos;s performance score is (19); rate=13.0(19); totHours=50(19)</declarations>
+  <type>7</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [19]</activationId>
+  <rule>One</rule>
+  <declarations>e=Twanda Crooms&apos;s performance score is (19); hours=10(19); totHours=50(19)</declarations>
+  <type>6</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [19]</activationId>
+  <rule>One</rule>
+  <declarations>e=Twanda Crooms&apos;s performance score is (19); hours=10(19); totHours=50(19)</declarations>
+  <type>7</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <factId>19</factId>
+  <objectToString>Twanda Crooms&apos;s performance score is </objectToString>
+  <type>3</type>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [20]</activationId>
+  <rule>One</rule>
+  <declarations>e=Enid Riehl&apos;s performance score is (20); hours=19(20); totHours=50(20)</declarations>
+  <type>4</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [20]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=1662.5(20); hours=19(20); e=Enid Riehl&apos;s performance score is (20); rate=87.5(20); totHours=50(20)</declarations>
+  <type>4</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <factId>20</factId>
+  <objectToString>Enid Riehl&apos;s performance score is </objectToString>
+  <type>1</type>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [20]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=1662.5(20); hours=19(20); e=Enid Riehl&apos;s performance score is (20); rate=87.5(20); totHours=50(20)</declarations>
+  <type>6</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [20]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=1662.5(20); hours=19(20); e=Enid Riehl&apos;s performance score is (20); rate=87.5(20); totHours=50(20)</declarations>
+  <type>7</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [20]</activationId>
+  <rule>One</rule>
+  <declarations>e=Enid Riehl&apos;s performance score is (20); hours=19(20); totHours=50(20)</declarations>
+  <type>6</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [20]</activationId>
+  <rule>One</rule>
+  <declarations>e=Enid Riehl&apos;s performance score is (20); hours=19(20); totHours=50(20)</declarations>
+  <type>7</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <factId>20</factId>
+  <objectToString>Enid Riehl&apos;s performance score is </objectToString>
+  <type>3</type>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [21]</activationId>
+  <rule>One</rule>
+  <declarations>e=Genevieve Mccandless&apos;s performance score is (21); hours=14(21); totHours=50(21)</declarations>
+  <type>4</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [21]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=322.0(21); hours=14(21); e=Genevieve Mccandless&apos;s performance score is (21); rate=23.0(21); totHours=50(21)</declarations>
+  <type>4</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <factId>21</factId>
+  <objectToString>Genevieve Mccandless&apos;s performance score is </objectToString>
+  <type>1</type>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [21]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=322.0(21); hours=14(21); e=Genevieve Mccandless&apos;s performance score is (21); rate=23.0(21); totHours=50(21)</declarations>
+  <type>6</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [21]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=322.0(21); hours=14(21); e=Genevieve Mccandless&apos;s performance score is (21); rate=23.0(21); totHours=50(21)</declarations>
+  <type>7</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [21]</activationId>
+  <rule>One</rule>
+  <declarations>e=Genevieve Mccandless&apos;s performance score is (21); hours=14(21); totHours=50(21)</declarations>
+  <type>6</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [21]</activationId>
+  <rule>One</rule>
+  <declarations>e=Genevieve Mccandless&apos;s performance score is (21); hours=14(21); totHours=50(21)</declarations>
+  <type>7</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <factId>21</factId>
+  <objectToString>Genevieve Mccandless&apos;s performance score is </objectToString>
+  <type>3</type>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [22]</activationId>
+  <rule>One</rule>
+  <declarations>e=Iesah Guilbault&apos;s performance score is (22); hours=36(22); totHours=50(22)</declarations>
+  <type>4</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [22]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=1652.4(22); hours=36(22); e=Iesah Guilbault&apos;s performance score is (22); rate=45.9(22); totHours=50(22)</declarations>
+  <type>4</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <factId>22</factId>
+  <objectToString>Iesah Guilbault&apos;s performance score is </objectToString>
+  <type>1</type>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [22]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=1652.4(22); hours=36(22); e=Iesah Guilbault&apos;s performance score is (22); rate=45.9(22); totHours=50(22)</declarations>
+  <type>6</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [22]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=1652.4(22); hours=36(22); e=Iesah Guilbault&apos;s performance score is (22); rate=45.9(22); totHours=50(22)</declarations>
+  <type>7</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [22]</activationId>
+  <rule>One</rule>
+  <declarations>e=Iesah Guilbault&apos;s performance score is (22); hours=36(22); totHours=50(22)</declarations>
+  <type>6</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [22]</activationId>
+  <rule>One</rule>
+  <declarations>e=Iesah Guilbault&apos;s performance score is (22); hours=36(22); totHours=50(22)</declarations>
+  <type>7</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <factId>22</factId>
+  <objectToString>Iesah Guilbault&apos;s performance score is </objectToString>
+  <type>3</type>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [23]</activationId>
+  <rule>One</rule>
+  <declarations>e=Aida Shibley&apos;s performance score is (23); hours=41(23); totHours=50(23)</declarations>
+  <type>4</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [23]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=2642.45(23); hours=41(23); e=Aida Shibley&apos;s performance score is (23); rate=64.45(23); totHours=50(23)</declarations>
+  <type>4</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <factId>23</factId>
+  <objectToString>Aida Shibley&apos;s performance score is </objectToString>
+  <type>1</type>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [23]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=2642.45(23); hours=41(23); e=Aida Shibley&apos;s performance score is (23); rate=64.45(23); totHours=50(23)</declarations>
+  <type>6</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [23]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=2642.45(23); hours=41(23); e=Aida Shibley&apos;s performance score is (23); rate=64.45(23); totHours=50(23)</declarations>
+  <type>7</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [23]</activationId>
+  <rule>One</rule>
+  <declarations>e=Aida Shibley&apos;s performance score is (23); hours=41(23); totHours=50(23)</declarations>
+  <type>6</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [23]</activationId>
+  <rule>One</rule>
+  <declarations>e=Aida Shibley&apos;s performance score is (23); hours=41(23); totHours=50(23)</declarations>
+  <type>7</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <factId>23</factId>
+  <objectToString>Aida Shibley&apos;s performance score is </objectToString>
+  <type>3</type>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [24]</activationId>
+  <rule>One</rule>
+  <declarations>e=Horense Mccreight&apos;s performance score is (24); hours=48(24); totHours=50(24)</declarations>
+  <type>4</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [24]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=3028.8(24); hours=48(24); e=Horense Mccreight&apos;s performance score is (24); rate=63.1(24); totHours=50(24)</declarations>
+  <type>4</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <factId>24</factId>
+  <objectToString>Horense Mccreight&apos;s performance score is </objectToString>
+  <type>1</type>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [24]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=3028.8(24); hours=48(24); e=Horense Mccreight&apos;s performance score is (24); rate=63.1(24); totHours=50(24)</declarations>
+  <type>6</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [24]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=3028.8(24); hours=48(24); e=Horense Mccreight&apos;s performance score is (24); rate=63.1(24); totHours=50(24)</declarations>
+  <type>7</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [24]</activationId>
+  <rule>One</rule>
+  <declarations>e=Horense Mccreight&apos;s performance score is (24); hours=48(24); totHours=50(24)</declarations>
+  <type>6</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [24]</activationId>
+  <rule>One</rule>
+  <declarations>e=Horense Mccreight&apos;s performance score is (24); hours=48(24); totHours=50(24)</declarations>
+  <type>7</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <factId>24</factId>
+  <objectToString>Horense Mccreight&apos;s performance score is </objectToString>
+  <type>3</type>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [25]</activationId>
+  <rule>One</rule>
+  <declarations>e=Peggie Rotondo&apos;s performance score is (25); hours=15(25); totHours=50(25)</declarations>
+  <type>4</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [25]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=522.0(25); hours=15(25); e=Peggie Rotondo&apos;s performance score is (25); rate=34.8(25); totHours=50(25)</declarations>
+  <type>4</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <factId>25</factId>
+  <objectToString>Peggie Rotondo&apos;s performance score is </objectToString>
+  <type>1</type>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [25]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=522.0(25); hours=15(25); e=Peggie Rotondo&apos;s performance score is (25); rate=34.8(25); totHours=50(25)</declarations>
+  <type>6</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [25]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=522.0(25); hours=15(25); e=Peggie Rotondo&apos;s performance score is (25); rate=34.8(25); totHours=50(25)</declarations>
+  <type>7</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [25]</activationId>
+  <rule>One</rule>
+  <declarations>e=Peggie Rotondo&apos;s performance score is (25); hours=15(25); totHours=50(25)</declarations>
+  <type>6</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [25]</activationId>
+  <rule>One</rule>
+  <declarations>e=Peggie Rotondo&apos;s performance score is (25); hours=15(25); totHours=50(25)</declarations>
+  <type>7</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <factId>25</factId>
+  <objectToString>Peggie Rotondo&apos;s performance score is </objectToString>
+  <type>3</type>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [26]</activationId>
+  <rule>One</rule>
+  <declarations>e=Michael Jacome&apos;s performance score is (26); hours=6(26); totHours=50(26)</declarations>
+  <type>4</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [26]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=527.4(26); hours=6(26); e=Michael Jacome&apos;s performance score is (26); rate=87.9(26); totHours=50(26)</declarations>
+  <type>4</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <factId>26</factId>
+  <objectToString>Michael Jacome&apos;s performance score is </objectToString>
+  <type>1</type>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [26]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=527.4(26); hours=6(26); e=Michael Jacome&apos;s performance score is (26); rate=87.9(26); totHours=50(26)</declarations>
+  <type>6</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [26]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=527.4(26); hours=6(26); e=Michael Jacome&apos;s performance score is (26); rate=87.9(26); totHours=50(26)</declarations>
+  <type>7</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [26]</activationId>
+  <rule>One</rule>
+  <declarations>e=Michael Jacome&apos;s performance score is (26); hours=6(26); totHours=50(26)</declarations>
+  <type>6</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [26]</activationId>
+  <rule>One</rule>
+  <declarations>e=Michael Jacome&apos;s performance score is (26); hours=6(26); totHours=50(26)</declarations>
+  <type>7</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <factId>26</factId>
+  <objectToString>Michael Jacome&apos;s performance score is </objectToString>
+  <type>3</type>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [27]</activationId>
+  <rule>One</rule>
+  <declarations>e=Trula Pleasants&apos;s performance score is (27); hours=4(27); totHours=50(27)</declarations>
+  <type>4</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [27]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=51.6(27); hours=4(27); e=Trula Pleasants&apos;s performance score is (27); rate=12.9(27); totHours=50(27)</declarations>
+  <type>4</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <factId>27</factId>
+  <objectToString>Trula Pleasants&apos;s performance score is </objectToString>
+  <type>1</type>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [27]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=51.6(27); hours=4(27); e=Trula Pleasants&apos;s performance score is (27); rate=12.9(27); totHours=50(27)</declarations>
+  <type>6</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [27]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=51.6(27); hours=4(27); e=Trula Pleasants&apos;s performance score is (27); rate=12.9(27); totHours=50(27)</declarations>
+  <type>7</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [27]</activationId>
+  <rule>One</rule>
+  <declarations>e=Trula Pleasants&apos;s performance score is (27); hours=4(27); totHours=50(27)</declarations>
+  <type>6</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [27]</activationId>
+  <rule>One</rule>
+  <declarations>e=Trula Pleasants&apos;s performance score is (27); hours=4(27); totHours=50(27)</declarations>
+  <type>7</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <factId>27</factId>
+  <objectToString>Trula Pleasants&apos;s performance score is </objectToString>
+  <type>3</type>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [28]</activationId>
+  <rule>One</rule>
+  <declarations>e=Galina Madonia&apos;s performance score is (28); hours=15(28); totHours=50(28)</declarations>
+  <type>4</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [28]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=161.25(28); hours=15(28); e=Galina Madonia&apos;s performance score is (28); rate=10.75(28); totHours=50(28)</declarations>
+  <type>4</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <factId>28</factId>
+  <objectToString>Galina Madonia&apos;s performance score is </objectToString>
+  <type>1</type>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [28]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=161.25(28); hours=15(28); e=Galina Madonia&apos;s performance score is (28); rate=10.75(28); totHours=50(28)</declarations>
+  <type>6</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [28]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=161.25(28); hours=15(28); e=Galina Madonia&apos;s performance score is (28); rate=10.75(28); totHours=50(28)</declarations>
+  <type>7</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [28]</activationId>
+  <rule>One</rule>
+  <declarations>e=Galina Madonia&apos;s performance score is (28); hours=15(28); totHours=50(28)</declarations>
+  <type>6</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [28]</activationId>
+  <rule>One</rule>
+  <declarations>e=Galina Madonia&apos;s performance score is (28); hours=15(28); totHours=50(28)</declarations>
+  <type>7</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <factId>28</factId>
+  <objectToString>Galina Madonia&apos;s performance score is </objectToString>
+  <type>3</type>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [29]</activationId>
+  <rule>One</rule>
+  <declarations>e=Coleman Gosier&apos;s performance score is (29); hours=27(29); totHours=50(29)</declarations>
+  <type>4</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [29]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=303.75(29); hours=27(29); e=Coleman Gosier&apos;s performance score is (29); rate=11.25(29); totHours=50(29)</declarations>
+  <type>4</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <factId>29</factId>
+  <objectToString>Coleman Gosier&apos;s performance score is </objectToString>
+  <type>1</type>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [29]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=303.75(29); hours=27(29); e=Coleman Gosier&apos;s performance score is (29); rate=11.25(29); totHours=50(29)</declarations>
+  <type>6</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [29]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=303.75(29); hours=27(29); e=Coleman Gosier&apos;s performance score is (29); rate=11.25(29); totHours=50(29)</declarations>
+  <type>7</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [29]</activationId>
+  <rule>One</rule>
+  <declarations>e=Coleman Gosier&apos;s performance score is (29); hours=27(29); totHours=50(29)</declarations>
+  <type>6</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [29]</activationId>
+  <rule>One</rule>
+  <declarations>e=Coleman Gosier&apos;s performance score is (29); hours=27(29); totHours=50(29)</declarations>
+  <type>7</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <factId>29</factId>
+  <objectToString>Coleman Gosier&apos;s performance score is </objectToString>
+  <type>3</type>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [30]</activationId>
+  <rule>One</rule>
+  <declarations>e=Merry Tejera&apos;s performance score is (30); hours=35(30); totHours=50(30)</declarations>
+  <type>4</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [30]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=2297.75(30); hours=35(30); e=Merry Tejera&apos;s performance score is (30); rate=65.65(30); totHours=50(30)</declarations>
+  <type>4</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <factId>30</factId>
+  <objectToString>Merry Tejera&apos;s performance score is </objectToString>
+  <type>1</type>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [30]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=2297.75(30); hours=35(30); e=Merry Tejera&apos;s performance score is (30); rate=65.65(30); totHours=50(30)</declarations>
+  <type>6</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>Two [30]</activationId>
+  <rule>Two</rule>
+  <declarations>pay=2297.75(30); hours=35(30); e=Merry Tejera&apos;s performance score is (30); rate=65.65(30); totHours=50(30)</declarations>
+  <type>7</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [30]</activationId>
+  <rule>One</rule>
+  <declarations>e=Merry Tejera&apos;s performance score is (30); hours=35(30); totHours=50(30)</declarations>
+  <type>6</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <activationId>One [30]</activationId>
+  <rule>One</rule>
+  <declarations>e=Merry Tejera&apos;s performance score is (30); hours=35(30); totHours=50(30)</declarations>
+  <type>7</type>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <factId>30</factId>
+  <objectToString>Merry Tejera&apos;s performance score is </objectToString>
+  <type>3</type>
+</org.drools.audit.event.ObjectLogEvent>
+</object-stream>
