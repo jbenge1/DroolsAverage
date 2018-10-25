@@ -18,7 +18,7 @@ public class UploadController {
     //Save the uploaded file to this folder
     private static String UPLOADED_FOLDER = System.getProperty("java.io.tmpdir")+"/";
 
-
+    
     @GetMapping("/load")
     public String index() {
         return "upload";

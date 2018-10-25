@@ -82,7 +82,7 @@ public class MainController {
 									 @RequestParam(required = false)String month, 
 									 @RequestParam(required = false)String year) {
 		
-		ruleRunner.fireRules(fileName1, fileName2, month, year);
+		ruleRunner.fireRulesHashMap(fileName1, fileName2, month, year);
 		List<Employee> employees = new ArrayList<Employee>();
 		employees = assetDAO.getEmployees();
 		return new ModelAndView("employees", "employee", employees);

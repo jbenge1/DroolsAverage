@@ -2,7 +2,9 @@ package com.techgap.DroolsAverage.DroolsAverage;
 
 import java.util.List;
 import java.util.Map;
+import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -37,11 +39,7 @@ public class AssetDAO {
 			//get each individual row
 			Object[] temp = list.get(0).values().toArray();
 			Employee tempEmp = new Employee();
-			//create a new Employee object from it
-//			tempEmp.setId((int)temp[0]);
-//			tempEmp.setFirstName((String)temp[1]);
-//			tempEmp.setLastName((String)temp[2]);
-//			tempEmp.setEmailAddr((String)temp[3]);
+
 			tempEmp.setCode((int)temp[0]);
 			tempEmp.setPerformance1((java.math.BigDecimal) temp[1]);
 			tempEmp.setPerformance2((java.math.BigDecimal) temp[2]);
@@ -61,5 +59,23 @@ public class AssetDAO {
 		
 		jdbcTemplate.update(query, new Object[] {employee.getPerformance1(),employee.getPerformance2(),month, year, 
 												 employee.getPerformance3(),employee.getPerformance4(), employee.getPerformanceTotal(),});
+	}
+	
+	public void addEmployee(HashMap<String, ArrayList<java.math.BigDecimal>> employee, int month, int year, String key) {
+		Object[] temp = new Object[] {};
+//		for(Object item: temp)
+//			System.out.println(item);
+		
+		query = "INSERT INTO employee_metrics (kpi1, kpi2, month, year, kpi3, kpi4, kpi_tot)values(?,?,?,?,?,?,?);";
+		
+//		jdbcTemplate.update(query, new Object[] {temp[0], temp[1], month, year, temp[2], temp[3], temp[4]});
+	}
+
+	public void addEmployee(ArrayList<BigDecimal> temp_arr, int month, int year) {
+		Object[] temp = new Object[] {temp_arr.get(0), temp_arr.get(1), month, year, temp_arr.get(2), temp_arr.get(3), temp_arr.get(4)};
+		
+		query = "INSERT INTO employee_metrics (kpi1, kpi2, month, year, kpi3, kpi4, kpi_tot)values(?,?,?,?,?,?,?);";
+		
+		jdbcTemplate.update(query, temp);
 	}
 }

@@ -3,8 +3,10 @@ package com.techgap.DroolsAverage.DroolsAverage;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.util.ArrayList;
 //import java.util.ArrayList;
 //import java.util.List;
+import java.util.HashMap;
 
 import org.kie.api.KieServices;
 import org.kie.api.builder.KieBuilder;
@@ -43,35 +45,18 @@ public class RuleRunner {
 	@Autowired
 	private AssetDAO assetDao;
 	
-	
-//	public void runRules(Employee employee) {
-//		try {
-//
-//			KnowledgeBase base = readKnowledgeBase("Ruleset3.drl");
-//			StatefulKnowledgeSession session = base.newStatefulKnowledgeSession();
-//
-//			@SuppressWarnings("unused")
-//			String cwd = System.getProperty("user.dir");
-//			
-//			FactHandle handle = session.insert(employee);
-//			session.fireAllRules();
-//			session.retract(handle);
-//			assetDao.addEmployee(employee);
-//
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		}
-//	}
-
+	/**
+	 * 
+	 * @param fileName1
+	 * @param fileName2
+	 * @param month
+	 * @param year
+	 */
 	public void fireRules(String fileName1, String fileName2, String month, String year) {
 		try {
             if(!fileName2.contains(".drl"))
             	fileName2 += ".drl";
             KieSession session = getKieSession(PATH + fileName2);
-//			KnowledgeRuntimeLogger logger = KnowledgeRuntimeLoggerFactory.newFileLogger(session, "test");
-			
-//			@SuppressWarnings("unused")
-//			String cwd = System.getProperty("user.dir");
 			
 			if(!fileName1.contains(".csv"))
 				fileName1 += ".csv";
@@ -92,65 +77,72 @@ public class RuleRunner {
             	}
             }   
             reader.close();
-//          
-//            empList.sort(Comparator.comparing(Employee::getPerformance1));
-//            System.out.println("Performance 1 metrics");
-//            System.out.println("____________________________");
-//            printEmpList(empList,true);
-//            
-//            System.out.println();
-//            
-//            empList.sort(Comparator.comparing(Employee::getPerformance2));
-//            System.out.println("Performance 2 metrics");
-//            System.out.println("____________________________");
-//            printEmpList(empList,false);
-//			logger.close();
-			
 		} catch (Exception e) {e.printStackTrace();}
 	}
 
-	
-	
 	/**
 	 * 
-	 * @param empList
-	 * @param flag
+	 * @param fileName1
+	 * @param fileName2
+	 * @param month
+	 * @param year
 	 */
-//	private static void printEmpList(List<Employee> empList, boolean flag) {
-//		int j=1;
-//        int tempI = empList.size()-1;
-//        int tempJ = tempI - 11;
-//        for(int i=tempI;i>tempJ;i--) {
-//        	System.out.print((j++)+".) " + empList.get(i));
-//        	if(flag)
-//        		System.out.println(empList.get(i).getPerformance1());
-//        	else
-//        		System.out.println(empList.get(i).getPerformance2());
-//        	
-//        }
-//	}
+	public void fireRulesHashMap(String fileName1, String fileName2, String month, String year) {
+		try {
+            if(!fileName2.contains(".drl"))
+            	fileName2 += ".drl";
+            KieSession session = getKieSession(PATH + fileName2);
+			
+			if(!fileName1.contains(".csv"))
+				fileName1 += ".csv";
+            File file = new File(PATH + fileName1);
+            BufferedReader reader = new BufferedReader(new FileReader(file));
+            String st;
+            
+            while((st = reader.readLine()) != null){
+            	System.out.println(st);
+            	if(st.startsWith("#"))
+            		continue;
+            	else {
+	                String[] temp = st.split(",");
+//	                Employee emp = new Employee(temp[0],  new java.math.BigDecimal(temp[1]),new java.math.BigDecimal(temp[2]), new java.math.BigDecimal(temp[3]), new java.math.BigDecimal(temp[4]));
+
+	                ArrayList<java.math.BigDecimal> temp_arr = new ArrayList<java.math.BigDecimal>();
+	                temp_arr.add(new java.math.BigDecimal(temp[1]));
+	                temp_arr.add(new java.math.BigDecimal(temp[2]));
+	                temp_arr.add(new java.math.BigDecimal(temp[3]));
+	                temp_arr.add(new java.math.BigDecimal(temp[4]));
+
+	                org.kie.api.runtime.rule.FactHandle handle = session.insert(temp_arr);
+
+	                org.kie.api.runtime.rule.FactHandle handle1 = session.insert(temp_arr.get(0));
+	                org.kie.api.runtime.rule.FactHandle handle2 = session.insert(temp_arr.get(1));
+	                org.kie.api.runtime.rule.FactHandle handle3 = session.insert(temp_arr.get(2));
+	                org.kie.api.runtime.rule.FactHandle handle4 = session.insert(temp_arr.get(3));
+	                System.out.println(temp_arr);
+	                
+	                session.fireAllRules(1);	              
+	                
+	                session.delete(handle);
+	                session.delete(handle1);
+	                session.delete(handle2);
+	                session.delete(handle3);
+	                session.delete(handle4);
+	                
+	                assetDao.addEmployee(temp_arr, Integer.parseInt(month), Integer.parseInt(year));
+	                temp_arr = null;
+            	}
+            }   
+            reader.close();
+		} catch (Exception e) {e.printStackTrace();}
+	}
+	
 	
 	/**
 	 * 
-	 * @param ruleSet
+	 * @param ruleset
 	 * @return
-	 * @throws Exception
 	 */
-//	private static KnowledgeBase readKnowledgeBase(String ruleSet) throws Exception {
-//		KnowledgeBuilder builder = KnowledgeBuilderFactory.newKnowledgeBuilder();
-//		builder.add(ResourceFactory.newClassPathResource(ruleSet), ResourceType.DRL);
-//		KnowledgeBuilderErrors errors = builder.getErrors();
-//		if (errors.size() > 0) {
-//			for (KnowledgeBuilderError error : errors)
-//				System.err.println(error);
-//			throw new IllegalArgumentException("Could not parse knowledge :(");
-//		}
-//		KnowledgeBase base = KnowledgeBaseFactory.newKnowledgeBase();
-//		base.addKnowledgePackages(builder.getKnowledgePackages());
-//		return base;
-//	}
-	
-	
 	private static KieSession getKieSession(String ruleset) {
 		KieServices kieServices = KieServices.Factory.get();
 		KieFileSystem kfs = kieServices.newKieFileSystem();

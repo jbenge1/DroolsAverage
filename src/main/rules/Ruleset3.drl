@@ -2,11 +2,8 @@ package Sample
 
 import com.techgap.DroolsAverage.DroolsAverage.EmployeeClass.Employee;
 
-rule "Test"
-	when
-	then
-		System.out.println("here");
-end
+dialect "java"
+/*
 rule "Test Rule"
 
     when
@@ -23,3 +20,35 @@ rule "Test Rule"
         e.setPerformanceTotal(result3);
 
 end
+
+rule "Test Hash Map"
+	when
+		key : String()
+		hM  : java.util.HashMap()
+	then
+		System.out.println((String)hM.get(key));
+end
+*/
+
+rule "Test Hash Map 2"
+	when
+		arrList : java.util.ArrayList()
+	
+	then
+		java.math.BigDecimal kpi1 = (java.math.BigDecimal)arrList.get(0);
+		java.math.BigDecimal kpi2 = (java.math.BigDecimal)arrList.get(1);
+		java.math.BigDecimal kpi3 = (java.math.BigDecimal)arrList.get(2);
+		java.math.BigDecimal kpi4 = (java.math.BigDecimal)arrList.get(3);
+
+		java.math.BigDecimal result = kpi1.add(kpi2);
+		result = result.add(kpi3);
+		result = result.add(kpi4);
+		arrList.add(result);
+		
+end
+
+
+
+
+
+
