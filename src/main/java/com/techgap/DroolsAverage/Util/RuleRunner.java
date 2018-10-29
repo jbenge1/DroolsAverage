@@ -113,7 +113,7 @@ public class RuleRunner {
 	                session.delete(handle3);
 	                session.delete(handle4);
 	                
-	                assetDao.addEmployee(temp_arr, Integer.parseInt(month), Integer.parseInt(year));
+	                assetDao.addEmployee(temp_arr, Integer.parseInt(month), Integer.parseInt(year), temp[0]);
 	                temp_arr = null;
             	}
             }   

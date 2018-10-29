@@ -82,6 +82,18 @@ public class MainController {
 		return "login";
 	}
 
+//	@RequestMapping("Employees")
+//	public ModelAndView getEmployees(@RequestParam(required = false)String fileName1,
+//									 @RequestParam(required = false)String fileName2,
+//									 @RequestParam(required = false)String month, 
+//									 @RequestParam(required = false)String year) {
+//		
+//		ruleRunner.fireRulesHashMap(fileName1, fileName2, month, year);
+//		List<Employee> employees = new ArrayList<Employee>();
+//		employees = assetDAO.getEmployees(Integer.parseInt(month), Integer.parseInt(year));
+//		return new ModelAndView("employees", "employee", employees);
+//	}
+	
 	@RequestMapping("Employees")
 	public ModelAndView getEmployees(@RequestParam(required = false)String fileName1,
 									 @RequestParam(required = false)String fileName2,
@@ -89,8 +101,8 @@ public class MainController {
 									 @RequestParam(required = false)String year) {
 		
 		ruleRunner.fireRulesHashMap(fileName1, fileName2, month, year);
-		List<Employee> employees = new ArrayList<Employee>();
-		employees = assetDAO.getEmployees(Integer.parseInt(month), Integer.parseInt(year));
+		List<ArrayList<Object>> employees = new ArrayList<ArrayList<Object>>();
+		employees = assetDAO.getEmployeesList(Integer.parseInt(month), Integer.parseInt(year));
 		return new ModelAndView("employees", "employee", employees);
 	}
 
@@ -126,8 +138,8 @@ public class MainController {
 	@RequestMapping("/selection")
 	public ModelAndView select(@RequestParam("month")String month,
 							   @RequestParam("year")String year) {
-		List<Employee> employees = new ArrayList<Employee>();
-		employees = assetDAO.getEmployees(Integer.parseInt(month), Integer.parseInt(year));
+		List<ArrayList<Object>> employees = new ArrayList<ArrayList<Object>>();
+		employees = assetDAO.getEmployeesList(Integer.parseInt(month), Integer.parseInt(year));
 		return new ModelAndView("employees", "employee", employees);
 	}
 	

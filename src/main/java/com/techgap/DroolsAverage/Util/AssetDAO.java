@@ -28,6 +28,29 @@ public class AssetDAO {
 		this.jdbcTemplate = jdbcTemplate;
 	}
 
+	public List<ArrayList<Object>> getEmployeesList(int month, int year) {
+		query = "SELECT * FROM employee_metrics WHERE year = ? AND month = ? ORDER BY kpi_tot DESC;";
+		List<Map<String, Object>> list = jdbcTemplate.queryForList(query, new Object[] {year, month});
+		
+		ArrayList<ArrayList<Object>> retval = new ArrayList<ArrayList<Object>>();
+		
+		while(!list.isEmpty()) {
+			Object[] temp = list.get(0).values().toArray();
+			ArrayList<Object> tempEmp = new ArrayList<Object>();
+			tempEmp.add((int)temp[0]);
+			tempEmp.add((java.math.BigDecimal) temp[1]);
+			tempEmp.add((java.math.BigDecimal) temp[2]);
+			tempEmp.add((java.math.BigDecimal) temp[5]);
+			tempEmp.add((java.math.BigDecimal) temp[6]);
+			tempEmp.add((java.math.BigDecimal) temp[7]);
+			tempEmp.add((String) temp[8]);
+			
+			retval.add(tempEmp);
+			list.remove(0);
+		}
+		return retval;
+	}
+	
 	
 	public List<Employee> getEmployees(int month, int year) {
 //		query = "SELECT * FROM employee_metrics WHERE year = 2018 AND month = 10 ORDER BY kpi_tot DESC;";
@@ -56,6 +79,12 @@ public class AssetDAO {
 		return retval;
 	}
 	
+	/**
+	 * 
+	 * @param employee
+	 * @param month
+	 * @param year
+	 */
 	public void addEmployee(Employee employee, int month, int year) {
 		query = "INSERT INTO employee_metrics (kpi1, kpi2, month, year, kpi3, kpi4, kpi_tot)values(?,?,?,?,?,?,?);";
 		
@@ -63,11 +92,31 @@ public class AssetDAO {
 												 employee.getPerformance3(),employee.getPerformance4(), employee.getPerformanceTotal(),});
 	}
 	
-
+	/**
+	 * 
+	 * @param temp_arr
+	 * @param month
+	 * @param year
+	 */
 	public void addEmployee(ArrayList<BigDecimal> temp_arr, int month, int year) {
 		Object[] temp = new Object[] {temp_arr.get(0), temp_arr.get(1), month, year, temp_arr.get(2), temp_arr.get(3), temp_arr.get(4)};
 		
 		query = "INSERT INTO employee_metrics (kpi1, kpi2, month, year, kpi3, kpi4, kpi_tot)values(?,?,?,?,?,?,?);";
+		
+		jdbcTemplate.update(query, temp);
+	}
+	
+	/**
+	 * 
+	 * @param temp_arr
+	 * @param month
+	 * @param year
+	 * @param name
+	 */
+	public void addEmployee(ArrayList<BigDecimal> temp_arr, int month, int year, String name) {
+		Object[] temp = new Object[] {temp_arr.get(0), temp_arr.get(1), month, year, temp_arr.get(2), temp_arr.get(3), temp_arr.get(4), name};
+		
+		query = "INSERT INTO employee_metrics (kpi1, kpi2, month, year, kpi3, kpi4, kpi_tot, name)values(?,?,?,?,?,?,?,?);";
 		
 		jdbcTemplate.update(query, temp);
 	}
