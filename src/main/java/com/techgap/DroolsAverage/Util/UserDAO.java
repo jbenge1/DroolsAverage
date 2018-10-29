@@ -1,8 +1,10 @@
-package com.techgap.DroolsAverage.DroolsAverage;
+package com.techgap.DroolsAverage.Util;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
+
+import com.techgap.DroolsAverage.Model.User;
 
 @Repository
 public class UserDAO {

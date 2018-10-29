@@ -1,4 +1,4 @@
-package com.techgap.DroolsAverage.DroolsAverage;
+package com.techgap.DroolsAverage.Model;
 
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;

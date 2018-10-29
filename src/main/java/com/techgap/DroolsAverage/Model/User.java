@@ -1,4 +1,4 @@
-package com.techgap.DroolsAverage.DroolsAverage;
+package com.techgap.DroolsAverage.Model;
 
 import org.springframework.stereotype.Component;
 

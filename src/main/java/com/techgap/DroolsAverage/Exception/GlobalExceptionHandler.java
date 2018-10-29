@@ -1,4 +1,4 @@
-package com.techgap.DroolsAverage.DroolsAverage;
+package com.techgap.DroolsAverage.Exception;
 
 
 import org.springframework.web.bind.annotation.ControllerAdvice;

@@ -1,4 +1,4 @@
-package com.techgap.DroolsAverage.DroolsAverage;
+package com.techgap.DroolsAverage.Util;
 
 import java.util.List;
 import java.util.Map;
@@ -10,7 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import com.techgap.DroolsAverage.DroolsAverage.EmployeeClass.Employee;
+import com.techgap.DroolsAverage.Model.EmployeeClass;
+import com.techgap.DroolsAverage.Model.EmployeeClass.Employee;
 
 
 

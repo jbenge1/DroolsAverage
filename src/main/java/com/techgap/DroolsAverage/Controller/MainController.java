@@ -1,10 +1,10 @@
-package com.techgap.DroolsAverage.DroolsAverage;
+package com.techgap.DroolsAverage.Controller;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import org.springframework.stereotype.Controller;
@@ -19,7 +19,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.techgap.DroolsAverage.DroolsAverage.EmployeeClass.Employee;
+import com.techgap.DroolsAverage.Model.EmployeeClass;
+import com.techgap.DroolsAverage.Model.User;
+import com.techgap.DroolsAverage.Model.UserRegistration;
+import com.techgap.DroolsAverage.Model.EmployeeClass.Employee;
+import com.techgap.DroolsAverage.Util.AssetDAO;
+import com.techgap.DroolsAverage.Util.RuleRunner;
+import com.techgap.DroolsAverage.Util.UserDAO;
 
 @Controller
 public class MainController {

@@ -2,7 +2,7 @@
 package Sample
 
 
-import com.techgap.DroolsAverage.DroolsAverage.EmployeeClass.Employee;
+import com.techgap.DroolsAverage.Model.EmployeeClass.Employee;
 
 
 rule "Weekly Average"

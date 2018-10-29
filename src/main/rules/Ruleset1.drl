@@ -1,7 +1,7 @@
 #created on: Oct 17, 2018
 package Sample
 
-import com.techgap.DroolsAverage.DroolsAverage.EmployeeClass.Employee;
+import com.techgap.DroolsAverage.Model.EmployeeClass.Employee;
 
 rule "One"
     when

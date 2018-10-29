@@ -1,4 +1,4 @@
-package com.techgap.DroolsAverage.DroolsAverage;
+package com.techgap.DroolsAverage.Util;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -17,24 +17,8 @@ import org.kie.api.runtime.KieSession;
 //import org.drools.runtime.rule.FactHandle;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-//import org.drools.KnowledgeBase;
-//import org.drools.KnowledgeBaseFactory;
-//import org.drools.builder.KnowledgeBuilder;
-//import org.drools.builder.KnowledgeBuilderError;
-//import org.drools.builder.KnowledgeBuilderErrors;
-//import org.drools.builder.KnowledgeBuilderFactory;
-//import org.drools.builder.ResourceType;
-//import org.drools.io.ResourceFactory;
-//import org.drools.logger.KnowledgeRuntimeLogger;
-//import org.drools.logger.KnowledgeRuntimeLoggerFactory;
-//import org.drools.runtime.StatefulKnowledgeSession;
-//
-//import com.sample.KieBuilder;
-//import com.sample.KieContainer;
-//import com.sample.KieFileSystem;
-//import com.sample.KieServices;
-//import com.sample.KieSession;
-import com.techgap.DroolsAverage.DroolsAverage.EmployeeClass.Employee;
+
+import com.techgap.DroolsAverage.Model.EmployeeClass.Employee;
 
 @Service
 public class RuleRunner {

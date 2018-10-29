@@ -1,5 +1,6 @@
-package com.techgap.DroolsAverage.DroolsAverage;
+package com.techgap.DroolsAverage.Controller;
 
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,6 +14,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 @Controller
+@ComponentScan("com.techgap.DroolsAverage.DroolsAverage")
 public class UploadController {
 
     //Save the uploaded file to this folder
