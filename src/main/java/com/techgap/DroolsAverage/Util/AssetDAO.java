@@ -120,4 +120,13 @@ public class AssetDAO {
 		
 		jdbcTemplate.update(query, temp);
 	}
+	
+	
+	public void addRuleFile(String name, String location, int month, int year) {
+		Object[] temp = new Object[] {name, location, month, year};
+		
+		query = "INSERT INTO rule_files (name, location, month, year) values (?,?,?,?);";
+		
+		jdbcTemplate.update(query, temp);
+	}
 }

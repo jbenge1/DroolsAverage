@@ -19,7 +19,6 @@
 				<td>kpi3</td>
 				<td>kpi4</td>
 				<td>kpiTotal</td>
-				<td></td>
 				<td>Name</td>
 		</tr>
 		<c:forEach items="${employee}" var="s">
@@ -38,7 +37,6 @@
 					<td>${s.get(3) }</td>
 					<td>${s.get(4) }</td>
 					<td>${s.get(5) }</td>
-					<td></td>
 					<td>${s.get(6) }</td>
 			</tr>
 		</c:forEach>

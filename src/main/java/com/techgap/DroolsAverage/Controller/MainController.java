@@ -101,6 +101,7 @@ public class MainController {
 									 @RequestParam(required = false)String year) {
 		
 		ruleRunner.fireRulesHashMap(fileName1, fileName2, month, year);
+		assetDAO.addRuleFile(fileName2, System.getProperty("java.io.tmpdir"), Integer.parseInt(month), Integer.parseInt(year));
 		List<ArrayList<Object>> employees = new ArrayList<ArrayList<Object>>();
 		employees = assetDAO.getEmployeesList(Integer.parseInt(month), Integer.parseInt(year));
 		return new ModelAndView("employees", "employee", employees);
