@@ -90,7 +90,7 @@ public class MainController {
 		
 		ruleRunner.fireRulesHashMap(fileName1, fileName2, month, year);
 		List<Employee> employees = new ArrayList<Employee>();
-		employees = assetDAO.getEmployees();
+		employees = assetDAO.getEmployees(Integer.parseInt(month), Integer.parseInt(year));
 		return new ModelAndView("employees", "employee", employees);
 	}
 
@@ -116,5 +116,19 @@ public class MainController {
 //    	
 //    }
 	// ============================================================================================
+	
+	@GetMapping("/selectEmployees")
+	public String selectEmployees(){
+		return "selectEmployee";
+	}
+	
+	
+	@RequestMapping("/selection")
+	public ModelAndView select(@RequestParam("month")String month,
+							   @RequestParam("year")String year) {
+		List<Employee> employees = new ArrayList<Employee>();
+		employees = assetDAO.getEmployees(Integer.parseInt(month), Integer.parseInt(year));
+		return new ModelAndView("employees", "employee", employees);
+	}
 	
 }

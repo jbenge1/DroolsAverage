@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import com.techgap.DroolsAverage.Model.EmployeeClass;
+//import com.techgap.DroolsAverage.Model.EmployeeClass;
 import com.techgap.DroolsAverage.Model.EmployeeClass.Employee;
 
 
@@ -28,12 +28,13 @@ public class AssetDAO {
 		this.jdbcTemplate = jdbcTemplate;
 	}
 
-	public List<Employee> getEmployees() {
-		query = "SELECT * FROM employee_metrics WHERE year = 2018 AND month = 10 ORDER BY kpi_tot DESC;";
-//		query = "SELECT * FROM employee_metrics WHERE year = ? AND month = ? ORDER BY kpi_tot DESC;";
+	
+	public List<Employee> getEmployees(int month, int year) {
+//		query = "SELECT * FROM employee_metrics WHERE year = 2018 AND month = 10 ORDER BY kpi_tot DESC;";
+		query = "SELECT * FROM employee_metrics WHERE year = ? AND month = ? ORDER BY kpi_tot DESC;";
 		
-		List<Map<String, Object>> list = jdbcTemplate.queryForList(query);
-//		List<Map<String, Object>> list = jdbcTemplate.queryForList(query, new Object[] {month, year});
+//		List<Map<String, Object>> list = jdbcTemplate.queryForList(query);
+		List<Map<String, Object>> list = jdbcTemplate.queryForList(query, new Object[] {year, month});
 		ArrayList<Employee> retval = new ArrayList<>();
 		//now lets loop through all the rows
 		while(!list.isEmpty()) {
@@ -62,15 +63,6 @@ public class AssetDAO {
 												 employee.getPerformance3(),employee.getPerformance4(), employee.getPerformanceTotal(),});
 	}
 	
-	public void addEmployee(HashMap<String, ArrayList<java.math.BigDecimal>> employee, int month, int year, String key) {
-		Object[] temp = new Object[] {};
-//		for(Object item: temp)
-//			System.out.println(item);
-		
-		query = "INSERT INTO employee_metrics (kpi1, kpi2, month, year, kpi3, kpi4, kpi_tot)values(?,?,?,?,?,?,?);";
-		
-//		jdbcTemplate.update(query, new Object[] {temp[0], temp[1], month, year, temp[2], temp[3], temp[4]});
-	}
 
 	public void addEmployee(ArrayList<BigDecimal> temp_arr, int month, int year) {
 		Object[] temp = new Object[] {temp_arr.get(0), temp_arr.get(1), month, year, temp_arr.get(2), temp_arr.get(3), temp_arr.get(4)};
