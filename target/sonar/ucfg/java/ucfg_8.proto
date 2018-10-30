@@ -1,0 +1,82 @@
+
+com.techgap.droolsaverage.controller.MainController#login(Lorg/springframework/ui/Model;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+__unknown_file (modelerrorlogout"paramAnnotations*“
+1
+u/home/justin/Documents/workspace/DroolsAverage/src/main/java/com/techgap/droolsaverage/controller/MainController.javaK	 K("Œ
+
+u/home/justin/Documents/workspace/DroolsAverage/src/main/java/com/techgap/droolsaverage/controller/MainController.javaK K(	
+login*©
+2
+u/home/justin/Documents/workspace/DroolsAverage/src/main/java/com/techgap/droolsaverage/controller/MainController.javaI I(
+š
+
+u/home/justin/Documents/workspace/DroolsAverage/src/main/java/com/techgap/droolsaverage/controller/MainController.javaI I(*
+%4"morg.springframework.ui.Model#addAttribute(Ljava/lang/String;Ljava/lang/Object;)Lorg/springframework/ui/Model;*	
+
+model*
+msg*
+
+Logged Out*
+1*Å
+4
+u/home/justin/Documents/workspace/DroolsAverage/src/main/java/com/techgap/droolsaverage/controller/MainController.javaF F(¶
+³
+
+u/home/justin/Documents/workspace/DroolsAverage/src/main/java/com/techgap/droolsaverage/controller/MainController.javaF F(C
+%3"morg.springframework.ui.Model#addAttribute(Ljava/lang/String;Ljava/lang/Object;)Lorg/springframework/ui/Model;*	
+
+model*
+
+errorMsg*" 
+Username or Password incorrect*
+2
+1*¦
+
+paramAnnotations
+u/home/justin/Documents/workspace/DroolsAverage/src/main/java/com/techgap/droolsaverage/controller/MainController.javaD D(>Ù
+Ö
+
+u/home/justin/Documents/workspace/DroolsAverage/src/main/java/com/techgap/droolsaverage/controller/MainController.javaC C(
+%0"
+__annotate*64
+2org.springframework.web.bind.annotation.GetMapping*	
+
+model£
+ 
+
+u/home/justin/Documents/workspace/DroolsAverage/src/main/java/com/techgap/droolsaverage/controller/MainController.javaD D( 
+model"__annotation*
+
+%0Ù
+Ö
+
+u/home/justin/Documents/workspace/DroolsAverage/src/main/java/com/techgap/droolsaverage/controller/MainController.javaC C(
+%1"
+__annotate*64
+2org.springframework.web.bind.annotation.GetMapping*	
+
+error£
+ 
+
+u/home/justin/Documents/workspace/DroolsAverage/src/main/java/com/techgap/droolsaverage/controller/MainController.javaD) D(.
+error"__annotation*
+
+%1Ú
+×
+
+u/home/justin/Documents/workspace/DroolsAverage/src/main/java/com/techgap/droolsaverage/controller/MainController.javaC C(
+%2"
+__annotate*64
+2org.springframework.web.bind.annotation.GetMapping*
+
+
+logout¤
+¡
+
+u/home/justin/Documents/workspace/DroolsAverage/src/main/java/com/techgap/droolsaverage/controller/MainController.javaD7 D(=
+logout"__annotation*
+
+%2*	
+2
+4
+1

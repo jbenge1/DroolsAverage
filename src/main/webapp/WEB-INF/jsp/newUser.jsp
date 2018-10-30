@@ -8,5 +8,6 @@
 	</head>
 	<body>
 		<a href='/'>Home</a>
+		<h1>Success</h1>
 	</body>
 </html>

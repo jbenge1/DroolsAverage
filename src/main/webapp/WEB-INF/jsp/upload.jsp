@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Upload</title>
+</head>
 <body>
 
 <h1>Spring Boot file upload example</h1>
