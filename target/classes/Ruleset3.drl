@@ -1,40 +1,18 @@
 package Sample
 
-import com.techgap.droolsaverage.model.EmployeeClass.Employee;
 
 dialect "java"
-/*
-rule "Test Rule"
-
-    when
-        e : Employee( calculate == 0, 
-        			  kpi1 : performance1,
-        			  kpi2 : performance2,
-        			  kpi3 : performance3,
-        			  kpi4 : performance4)
-    then
-    	java.math.BigDecimal result1 = kpi1.add(kpi2);
-    	java.math.BigDecimal result2 = result1.add(kpi3);
-    	java.math.BigDecimal result3 = result2.add(kpi4);
-    	
-        e.setPerformanceTotal(result3);
-
-end
-
-rule "Test Hash Map"
-	when
-		key : String()
-		hM  : java.util.HashMap()
-	then
-		System.out.println((String)hM.get(key));
-end
-*/
 
 rule "Test Hash Map 2"
 	when
 		arrList : java.util.ArrayList()
-	
+		
 	then
+		
+		if (false){System.out.println("HOW?!?!");}
+		else {System.out.println("All is good in the world");}	
+		
+		
 		java.math.BigDecimal kpi1 = (java.math.BigDecimal)arrList.get(0);
 		java.math.BigDecimal kpi2 = (java.math.BigDecimal)arrList.get(1);
 		java.math.BigDecimal kpi3 = (java.math.BigDecimal)arrList.get(2);

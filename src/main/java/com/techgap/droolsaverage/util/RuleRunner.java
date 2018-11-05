@@ -76,6 +76,84 @@ public class RuleRunner {
 		} catch (Exception e) {System.err.println(e.getMessage());}
 	}
 	
+	public void fireRulesHashMap2(String fileName1, String fileName2, String month, String year) {
+		try {
+            if(!fileName2.contains(".drl"))
+            	fileName2 += ".drl";
+            KieSession session = getKieSession(PATH + fileName2);
+			
+			if(!fileName1.contains(".csv"))
+				fileName1 += ".csv";
+            File file = new File(PATH + fileName1);
+            BufferedReader reader = new BufferedReader(new FileReader(file));
+            String st;
+            
+            //Pretty strait forward
+            java.math.BigDecimal totHWorkedInSidip = new java.math.BigDecimal(0);
+            //The list representing the list of employees
+            ArrayList<ArrayList<java.math.BigDecimal>> employee_list = new ArrayList<>();
+            //This loop calculates totHWorkedInSidip
+            while((st = reader.readLine()) != null){
+            	if(st.startsWith("#"))
+            		continue;
+            	else {
+	                String[] temp = st.split(",");
+	                //This list represents a single employee
+	                ArrayList<java.math.BigDecimal> temp_arr = new ArrayList<>();
+	                temp_arr.add(new java.math.BigDecimal(temp[1]));
+	                temp_arr.add(new java.math.BigDecimal(temp[2]));
+
+	                org.kie.api.runtime.rule.FactHandle handle = session.insert(temp_arr);
+	                org.kie.api.runtime.rule.FactHandle handle1 = session.insert(totHWorkedInSidip);
+	                
+	                session.fireAllRules(1);	              
+	                
+	                session.delete(handle);
+	                session.delete(handle1);
+	                
+	                employee_list.add(temp_arr);
+//	                assetDao.addEmployee(temp_arr, Integer.parseInt(month), Integer.parseInt(year), temp[0]);
+	                
+            	}
+            }   
+            reader.close();
+            
+            //Now lets calculate all other values for employees
+            for(ArrayList<java.math.BigDecimal> employee: employee_list) {
+            	org.kie.api.runtime.rule.FactHandle handle = session.insert(employee);
+            	org.kie.api.runtime.rule.FactHandle handle1 = session.insert(totHWorkedInSidip.doubleValue());
+                
+                session.fireAllRules(1);
+                session.delete(handle);
+                session.delete(handle1);
+            }
+            //Now calculate max(totEffect)
+            java.math.BigDecimal totEffect = new java.math.BigDecimal(0);
+            for(ArrayList<java.math.BigDecimal> employee: employee_list) {
+            	org.kie.api.runtime.rule.FactHandle handle = session.insert(totEffect);
+            	org.kie.api.runtime.rule.FactHandle handle1 = session.insert(employee);
+            	
+            	session.fireAllRules(1);
+            	
+            	session.delete(handle);
+            	session.delete(handle1);
+            }
+            
+            //Finally calculate the final KPI Value
+            for(ArrayList<java.math.BigDecimal> employee: employee_list) {
+            	org.kie.api.runtime.rule.FactHandle handle = session.insert(employee);
+            	org.kie.api.runtime.rule.FactHandle handle1 = session.insert(totEffect.doubleValue());
+            	org.kie.api.runtime.rule.FactHandle handle2 = session.insert(true);
+            	
+            	session.fireAllRules();
+            	
+            	session.delete(handle);
+            	session.delete(handle1);
+            	session.delete(handle2);
+            	assetDao.addEmployee(employee, Integer.parseInt(month), Integer.parseInt(year));
+            }
+		} catch (Exception e) {System.err.println(e.getMessage());}
+	}
 	
 	/**
 	 * 

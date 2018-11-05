@@ -1,0 +1,81 @@
+package Sample
+import java.math.BigDecimal;
+import java.math.MathContext;
+
+
+dialect "java"
+
+rule "totHWorkedInSidip"
+	when 
+		arrList : java.util.ArrayList()
+		hWorkedForMeritogame : BigDecimal()
+	then
+		hWorkedForMeritogame.add((BigDecimal)arrList.get(1));
+end
+
+rule "Intermediate values 1"
+    when
+		arrList : java.util.ArrayList()
+		totHWorkedInSidip : double()
+    then
+    	BigDecimal temp = (BigDecimal)arrList.get(0);
+    	double hWorked = temp.doubleValue();
+    	
+    	temp = (BigDecimal)arrList.get(1);
+    	double sumH = temp.doubleValue();
+    	
+		double hWorkedForMeritomeGame;
+		double availabiltyScoreTemp;
+		double totalEffect;
+		double availabilityScoreTemp;
+		
+		
+		double hContractForMeritomeGame; 
+		hWorkedForMeritomeGame = 0;
+		hContractForMeritomeGame = sumH * (52/12) * .88;
+		
+		if(hWorked > (hContractForMeritomeGame + 200)) {
+			hWorkedForMeritomeGame = hContractForMeritomeGame + 200;
+		}    	
+		else {
+			hWorkedForMeritomeGame = hWorked;
+		}
+		
+		availabilityScoreTemp = (hWorkedForMeritomeGame/hContractForMeritomeGame) * 100;
+		
+		totalEffect = hWorkedForMeritomeGame / totHWorkedInSidip ;
+		
+		arrList.add(new BigDecimal(hContractForMeritomeGame));
+		arrList.add(new BigDecimal(hWorkedForMeritomeGame));
+		arrList.add(new BigDecimal(availabilityScoreTemp));
+		arrList.add(new BigDecimal(totalEffect));
+end
+
+
+rule "Max(totalEffect)"
+	when		
+		totalEffect : BigDecimal()
+		arrList     : java.util.ArrayList()
+	then
+		if(totalEffect.compareTo((BigDecimal)arrList.get(5)) > 0)
+		{
+			totalEffect = (BigDecimal)arrList.get(5);
+		}
+end
+
+
+rule "Final KPI"
+	when
+		arrList : java.util.ArrayList()
+		zone1 : double()
+		temp : boolean()
+	then
+		double zone2 = zone1 * (4/5);
+		double zone3 = zone1 * (2/5); 
+		double employeeBonusValue;
+		
+		employeeBonusValue = 20;
+		BigDecimal val1 = (BigDecimal)arrList.get(4);
+		
+		arrList.add(val1.add(new BigDecimal(employeeBonusValue)));
+end

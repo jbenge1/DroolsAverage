@@ -81,7 +81,7 @@ public class MainController {
 									 @RequestParam(required = false)String month, 
 									 @RequestParam(required = false)String year) {
 		
-		ruleRunner.fireRulesHashMap(fileName1, fileName2, month, year);
+		ruleRunner.fireRulesHashMap2(fileName1, fileName2, month, year);
 		assetDAO.addRuleFile(fileName2, System.getProperty("java.io.tmpdir"), Integer.parseInt(month), Integer.parseInt(year));
 		List<ArrayList<Object>> employees;
 		employees = assetDAO.getEmployeesList(Integer.parseInt(month), Integer.parseInt(year));

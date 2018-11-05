@@ -55,13 +55,13 @@ public class AssetDAO {
 	 * @param month
 	 * @param year
 	 */
-	public void addEmployee(List<BigDecimal> temp_arr, int month, int year) {
-		Object[] temp = new Object[] {temp_arr.get(0), temp_arr.get(1), month, year, temp_arr.get(2), temp_arr.get(3), temp_arr.get(4)};
-		
-		query = "INSERT INTO employee_metrics (kpi1, kpi2, month, year, kpi3, kpi4, kpi_tot)values(?,?,?,?,?,?,?);";
-		
-		jdbcTemplate.update(query, temp);
-	}
+//	public void addEmployee(List<BigDecimal> temp_arr, int month, int year) {
+//		Object[] temp = new Object[] {temp_arr.get(0), temp_arr.get(1), month, year, temp_arr.get(2), temp_arr.get(3), temp_arr.get(4)};
+//		
+//		query = "INSERT INTO employee_metrics (kpi1, kpi2, month, year, kpi3, kpi4, kpi_tot)values(?,?,?,?,?,?,?);";
+//		
+//		jdbcTemplate.update(query, temp);
+//	}
 	
 	/**
 	 * 
@@ -75,6 +75,12 @@ public class AssetDAO {
 		
 		query = "INSERT INTO employee_metrics (kpi1, kpi2, month, year, kpi3, kpi4, kpi_tot, name)VALUES(?,?,?,?,?,?,?,?);";
 		
+		jdbcTemplate.update(query, temp);
+	}
+	
+	public void addEmployee(List<BigDecimal> temp_arr, int month, int year) {
+		Object[] temp = new Object[] {temp_arr.get(temp_arr.size()-1), 0, month, year, 0, 0, 0};
+		query = "INSERT INTO employee_metrics (kpi1, kpi2, month, year, kpi3, kpi4, kpi_tot)VALUES(?,?,?,?,?,?,?);";
 		jdbcTemplate.update(query, temp);
 	}
 	
