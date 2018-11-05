@@ -23,7 +23,6 @@
 			<li><a href="/Employees">Employees</a></li>
 			<li><a href="/load">Upload</a></li>
 			<li><a href="/selectEmployees">Select</a>
-<!-- 			<li><a href="/employeeAddForm">Add Employee</a></li> -->
 		</ul>
 
 		<div class="container">

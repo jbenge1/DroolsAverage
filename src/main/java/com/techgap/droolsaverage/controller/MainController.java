@@ -96,7 +96,7 @@ public class MainController {
 	}
 	
 	
-	//This is a terrible idea
+	//This seems like a terrible idea
 	//hmmmm....
 	@RequestMapping("/employeeAdd")
 	public String employeeAdd(@RequestParam("username")String username,
