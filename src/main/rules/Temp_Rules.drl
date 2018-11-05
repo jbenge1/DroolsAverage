@@ -1,6 +1,0 @@
-package Sample
-rule "Your First Rule"
-    when
-    then
-        System.out.println("YAY:D");
-end
