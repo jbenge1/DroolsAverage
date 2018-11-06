@@ -5,11 +5,11 @@ import java.util.HashMap;
 rule "hContractForMeritogame"
 when
     $employee : EmployeeForDrools(
-        $sumHContractToWorkWeeklyByMonth: Double.parseDouble(record.get("sumHContractToWorkWeeklyByMonth")),
+        $sumHContractToWorkWeeklyByMonth: Double.parseDouble(csv.get("sumHContractToWorkWeeklyByMonth")),
         kpiStore.get("hContractForMeritogame") == null
     )
 then
-    System.err.println("Firing hContractForMeritogame for " + $employee.getRecord().get("EmployeeID"));
+    System.err.println("Firing hContractForMeritogame for " + $employee.getCsv().get("EmployeeID"));
     modify($employee){
         setKpi("hContractForMeritogame", (52.0 / 12.0) * $sumHContractToWorkWeeklyByMonth * 0.88)
     }
@@ -19,12 +19,12 @@ end
 rule "hWorkedForMeritogame"
 when
     $employee : EmployeeForDrools(
-        $hWorked : Double.parseDouble(record.get("hWorked")),
+        $hWorked : Double.parseDouble(csv.get("hWorked")),
         $hContractForMeritogame : kpiStore["hContractForMeritogame"],
         kpiStore.get("hWorkedForMeritogame") == null
     )
 then
-    System.err.println("Firing hWorkedForMeritogame for " + $employee.getRecord().get("EmployeeID"));
+    System.err.println("Firing hWorkedForMeritogame for " + $employee.getCsv().get("EmployeeID"));
     modify($employee){
         setKpi("hWorkedForMeritogame",  $hWorked  > ($hContractForMeritogame + 200.0) ? $hContractForMeritogame + 200 : $hWorked)
     }
@@ -55,7 +55,7 @@ when
                 sum( $value )
               )
 then
-    System.err.println("Firing totHWorkedInSidip for " + $employee.getRecord().get("EmployeeID"));
+    System.err.println("Firing totHWorkedInSidip for " + $employee.getCsv().get("EmployeeID"));
     modify($employee){
         setKpi("totHWorkedInSidip", $totHWorkedInSidip)
     }
@@ -69,7 +69,7 @@ when
         kpiStore.get("totalEffect") == null
     )
 then
-    System.err.println("Firing totalEffect for " + $employee.getRecord().get("EmployeeID"));
+    System.err.println("Firing totalEffect for " + $employee.getCsv().get("EmployeeID"));
     modify($employee){
         setKpi("totalEffect",  $totHWorkedInSidip <= 0 ? 0.0 : $hWorkedForMeritogame / $totHWorkedInSidip)
     }
@@ -88,7 +88,7 @@ when
                 max( $value )
               )
 then
-    System.err.println("Firing zones for " + $employee.getRecord().get("EmployeeID"));
+    System.err.println("Firing zones for " + $employee.getCsv().get("EmployeeID"));
     modify($employee){
         setKpi("zone1", $zone1),
         setKpi("zone2", 4.0 * $zone1 / 5.0),

@@ -13,13 +13,12 @@ import org.kie.api.runtime.KieSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.io.File;
 import java.io.IOException;
-import java.math.BigDecimal;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 @Service
@@ -44,12 +43,13 @@ public class RuleRunner {
             session.fireAllRules();
             for (EmployeeForDrools employeeForDrool : employeeForDrools) {
                 List<Double> kpis = new ArrayList<>(4);
-                kpis.add(employeeForDrool.getKpiStore().getOrDefault("kpi1", 0.0));
-                kpis.add(employeeForDrool.getKpiStore().getOrDefault("kpi2", 0.0));
-                kpis.add(employeeForDrool.getKpiStore().getOrDefault("kpi3", 0.0));
-                kpis.add(employeeForDrool.getKpiStore().getOrDefault("kpi4", 0.0));
-                kpis.add(employeeForDrool.getKpiStore().getOrDefault("kpiTot", 0.0));
-                assetDao.addEmployee(kpis, Integer.parseInt(month), Integer.parseInt(year), employeeForDrool.getRecord().get("EmployeeID"));
+                final Map<String, Double> computedKpis = employeeForDrool.getKpiStore();
+                kpis.add(computedKpis.getOrDefault("kpi1", 0.0));
+                kpis.add(computedKpis.getOrDefault("kpi2", 0.0));
+                kpis.add(computedKpis.getOrDefault("kpi3", 0.0));
+                kpis.add(computedKpis.getOrDefault("kpi4", 0.0));
+                kpis.add(computedKpis.getOrDefault("kpiTot", 0.0));
+                assetDao.addEmployee(kpis, Integer.parseInt(month), Integer.parseInt(year), employeeForDrool.getCsv().get("EmployeeID"));
             }
             session.destroy();
         } catch (Exception e) {

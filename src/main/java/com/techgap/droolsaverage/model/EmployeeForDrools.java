@@ -7,20 +7,20 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class EmployeeForDrools {
-    private CSVRecord record;
+    private CSVRecord csv;
     private Map<String, Double> kpiStore;
 
-    public EmployeeForDrools(CSVRecord record) {
-        this.record = record;
+    public EmployeeForDrools(CSVRecord csv) {
+        this.csv = csv;
         this.kpiStore = new HashMap<>();
     }
 
-    public CSVRecord getRecord() {
-        return record;
+    public CSVRecord getCsv() {
+        return csv;
     }
 
-    public void setRecord(CSVRecord record) {
-        this.record = record;
+    public void setCsv(CSVRecord csv) {
+        this.csv = csv;
     }
 
     public Map<String, Double> getKpiStore() {
@@ -39,7 +39,7 @@ public class EmployeeForDrools {
     @Override
     public String toString() {
         return "EmployeeForDrools{" +
-                "record=" + record.getRecordNumber() +
+                "csv=" + csv.getRecordNumber() +
                 ", kpiStore=" + kpiStore +
                 '}';
     }
