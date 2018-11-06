@@ -22,7 +22,6 @@
 			<li><a href="/">Home</a></li>
 			<li><a href="/Employees">Employees</a></li>
 			<li><a href="/load">Upload</a></li>
-			<li><a href="/selectEmployees">Select</a>
 		</ul>
 
 		<div class="container">

@@ -26,6 +26,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.csrf().disable();
+
+		http.authorizeRequests().antMatchers("/load").access("hasRole('ROLE_ADMIN')")
+		.antMatchers("/").access("hasRole('ROLE_USER', 'ROLE_ADMIN')")
+		.and().formLogin();		
 		
 	    http
         .authorizeRequests()
@@ -39,11 +43,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
         .logout()
             .permitAll();
 
-		
+
 		//everything else ADMIN and USERS can see
-		http.authorizeRequests().antMatchers("/").hasAnyRole("ADMIN","USER")
-				.and().formLogin().loginPage(LOGIN);	
+//		http.authorizeRequests().antMatchers("/").hasAnyRole("ADMIN", "USER")
+//				.and().formLogin().loginPage(LOGIN);	
 		
+//		http.authorizeRequests().antMatchers("/load").hasAnyAuthority("ADMIN");
 	}
 	
 	@Autowired
