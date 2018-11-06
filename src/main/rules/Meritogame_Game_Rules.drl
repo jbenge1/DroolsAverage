@@ -1,0 +1,154 @@
+package Sample
+import com.techgap.droolsaverage.model.EmployeeForDrools;
+import java.util.HashMap;
+
+rule "hContractForMeritogame"
+when
+    $employee : EmployeeForDrools(
+        $sumHContractToWorkWeeklyByMonth: Double.parseDouble(record.get("sumHContractToWorkWeeklyByMonth")),
+        kpiStore.get("hContractForMeritogame") == null
+    )
+then
+    System.err.println("Firing hContractForMeritogame for " + $employee.getRecord().get("EmployeeID"));
+    modify($employee){
+        setKpi("hContractForMeritogame", (52.0 / 12.0) * $sumHContractToWorkWeeklyByMonth * 0.88)
+    }
+end
+
+
+rule "hWorkedForMeritogame"
+when
+    $employee : EmployeeForDrools(
+        $hWorked : Double.parseDouble(record.get("hWorked")),
+        $hContractForMeritogame : kpiStore["hContractForMeritogame"],
+        kpiStore.get("hWorkedForMeritogame") == null
+    )
+then
+    System.err.println("Firing hWorkedForMeritogame for " + $employee.getRecord().get("EmployeeID"));
+    modify($employee){
+        setKpi("hWorkedForMeritogame",  $hWorked  > ($hContractForMeritogame + 200.0) ? $hContractForMeritogame + 200 : $hWorked)
+    }
+end
+
+rule "availabilityScoreTmp"
+when
+    $employee: EmployeeForDrools(
+        $hWorkedForMeritogame: kpiStore["hWorkedForMeritogame"],
+        $hContractForMeritogame: kpiStore["hContractForMeritogame"],
+        kpiStore.get("availabilityScoreTmp") == null
+    )
+then
+    modify($employee){
+        setKpi("availabilityScoreTmp", $hContractForMeritogame <= 0 ? 0.0 : 100.0 * ($hWorkedForMeritogame / $hContractForMeritogame))
+    }
+end
+rule "totHWorkedInSidip"
+when
+    $employee : EmployeeForDrools(
+        kpiStore.get("totHWorkedInSidip") == null
+    )
+    $totHWorkedInSidip : Double()
+             from accumulate(
+                EmployeeForDrools(
+                    $value : kpiStore["hWorkedForMeritogame"]
+                ),
+                sum( $value )
+              )
+then
+    System.err.println("Firing totHWorkedInSidip for " + $employee.getRecord().get("EmployeeID"));
+    modify($employee){
+        setKpi("totHWorkedInSidip", $totHWorkedInSidip)
+    }
+end
+
+rule "totalEffect"
+when
+    $employee : EmployeeForDrools(
+        $totHWorkedInSidip : kpiStore["totHWorkedInSidip"],
+        $hWorkedForMeritogame : kpiStore["hWorkedForMeritogame"],
+        kpiStore.get("totalEffect") == null
+    )
+then
+    System.err.println("Firing totalEffect for " + $employee.getRecord().get("EmployeeID"));
+    modify($employee){
+        setKpi("totalEffect",  $totHWorkedInSidip <= 0 ? 0.0 : $hWorkedForMeritogame / $totHWorkedInSidip)
+    }
+end
+
+rule "zones"
+when
+    $employee : EmployeeForDrools(
+        kpiStore.get("zone1") == null
+    )
+    $zone1 : Double()
+             from accumulate(
+                EmployeeForDrools(
+                    $value : kpiStore["totalEffect"]
+                ),
+                max( $value )
+              )
+then
+    System.err.println("Firing zones for " + $employee.getRecord().get("EmployeeID"));
+    modify($employee){
+        setKpi("zone1", $zone1),
+        setKpi("zone2", 4.0 * $zone1 / 5.0),
+        setKpi("zone3", 2.0 * $zone1 / 5.0)
+    }
+end
+
+
+rule "employeeBonusValueForZone1"
+when
+    $employee : EmployeeForDrools(
+        $totalEffect: kpiStore["totalEffect"],
+        $zone2: kpiStore["zone2"],
+        $totalEffect > $zone2,
+        kpiStore.get("employeeBonusValue") == null
+    )
+then
+    modify($employee){
+        setKpi("employeeBonusValue", 20.0)
+    }
+end
+
+rule "employeeBonusValueForZone2"
+when
+    $employee : EmployeeForDrools(
+        $totalEffect: kpiStore["totalEffect"],
+        $zone3: kpiStore["zone3"],
+        $totalEffect > $zone3,
+        kpiStore.get("employeeBonusValue") == null
+    )
+then
+    modify($employee){
+        setKpi("employeeBonusValue", 15.0)
+    }
+end
+
+rule "employeeBonusValueForZone3"
+when
+    $employee : EmployeeForDrools(
+        $totalEffect: kpiStore["totalEffect"],
+        $zone3: kpiStore["zone3"],
+        $totalEffect <= $zone3,
+        kpiStore.get("employeeBonusValue") == null
+    )
+then
+    modify($employee){
+        setKpi("employeeBonusValue", 0.0)
+    }
+end
+
+rule "Availability KPI"
+when
+    $employee : EmployeeForDrools(
+        $employeeBonusValue: kpiStore["employeeBonusValue"],
+        $availabilityScoreTmp: kpiStore["availabilityScoreTmp"],
+        kpiStore.get("kpi1") == null
+    )
+then
+    modify($employee){
+        setKpi("kpi1", $employeeBonusValue + $availabilityScoreTmp),
+        setKpi("kpiTot", $employeeBonusValue + $availabilityScoreTmp)
+    }
+end
