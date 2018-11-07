@@ -79,7 +79,13 @@ public class MainController {
         employees = assetDAO.getEmployeesList(Integer.parseInt(month), Integer.parseInt(year));
         return new ModelAndView("employees", "employee", employees);
     }
-
+    @RequestMapping("ViewEmployees")
+    public ModelAndView viewEmployees(@RequestParam(required = false) String month,
+    								  @RequestParam(required = false) String year) {
+    	List<ArrayList<Object>> employees;
+    	employees = assetDAO.getEmployeesList(11, 2018);
+    	return new ModelAndView("employees", "employee", employees);
+    }
     // ============================================================================================
 
     @GetMapping("/employeeAddForm")

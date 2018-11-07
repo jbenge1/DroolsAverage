@@ -11,6 +11,16 @@
 <title>Home</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+
+<link
+	href="https://fonts.googleapis.com/css?family=Raleway:400,300,600,800,900"
+	rel="stylesheet" type="text/css">
+<style>
+body {
+	/* 	background-color: #000; */
+	font-family: Raleway;
+}
+</style>
 </head>
 <body>
 	<nav class="navbar navbar-inverse">
@@ -20,7 +30,7 @@
 		</div>
 		<ul class="nav navbar-nav">
 			<li><a href="/">Home</a></li>
-			<li><a href="/Employees">Employees</a></li>
+			<li><a href="/ViewEmployees">Employees</a></li>
 			<li><a href="/load">Upload</a></li>
 		</ul>
 
@@ -30,13 +40,13 @@
 						class="glyphicon glyphicon-log-out"></span> Logout</a></li>
 			</ul>
 		</div>
-
-		<div class="jumbotron">
-			<h1>Index Page</h1>
-			<p>I'm not great at designing pages so I don't know what to put
-				here....</p>
-		</div>
-	</div>
 	</nav>
+	<div class="jumbotron">
+		<h1>Index Page</h1>
+		<p>I'm not great at designing pages so I don't know what to put
+			here....</p>
+	</div>
+	</div>
+
 </body>
 </html>

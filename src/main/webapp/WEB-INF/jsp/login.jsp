@@ -16,7 +16,7 @@
 	 <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600,800,900" rel="stylesheet" type="text/css">
 	<style>
 		body {
-			background-color: #000;
+/* 			background-color: #000; */
 			font-family: Raleway;
 		}
 		
@@ -29,7 +29,7 @@
 <body class="container" style="margin-top:50px">
 	<div class="row col-sm-6" 
 				style="border: 1px ridge #F93; padding:20px; float: none; margin: 0 auto;">
-		<h5 class="text-center" style="font-size: 25px; color: #FFF; font-family:Raleway">Sign In</h5>
+		<h5 class="text-center" style="font-size: 25px; font-family:Raleway">Sign In</h5>
 		<a href="/employeeAddForm">Register</a>
  		<form method="POST" action="${contextPath}/login" class="form-signin">
 			
