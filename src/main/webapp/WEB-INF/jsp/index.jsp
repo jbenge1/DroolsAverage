@@ -41,12 +41,14 @@ body {
 			</ul>
 		</div>
 	</nav>
+	
 	<div class="jumbotron">
 		<h1>Index Page</h1>
 		<p>I'm not great at designing pages so I don't know what to put
 			here....</p>
 	</div>
 	</div>
+	
 
 </body>
 </html>

@@ -14,7 +14,7 @@ body {
 }
 </style>
 </head>
-<body class="container" style="margin-top:50px">
+<body>
 	<nav class="navbar navbar-inverse">
 	<div class="container-fluid">
 		<div class="navbar-header">
@@ -31,6 +31,7 @@ body {
 				<li><a href="logout"><span
 						class="glyphicon glyphicon-log-out"></span> Logout</a></li>
 			</ul>
+		</div>
 		</div>
 	</nav>
 <div class="row col-sm-6"

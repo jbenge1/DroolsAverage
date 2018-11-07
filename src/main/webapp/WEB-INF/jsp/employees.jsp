@@ -9,7 +9,7 @@
 <head>
 <meta charset="US-ASCII">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Some Title</title>
+<title>Employee KPI's</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 
@@ -39,6 +39,7 @@ body {
 				<li><a href="logout"><span
 						class="glyphicon glyphicon-log-out"></span> Logout</a></li>
 			</ul>
+		</div>
 		</div>
 	</nav>
 	<table class="table table-dark table-striped">
