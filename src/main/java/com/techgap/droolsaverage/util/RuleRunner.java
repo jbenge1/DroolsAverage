@@ -1,10 +1,9 @@
 package com.techgap.droolsaverage.util;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.util.ArrayList;
-
+import com.techgap.droolsaverage.model.EmployeeForDrools;
+import org.apache.commons.csv.CSVFormat;
+import org.apache.commons.csv.CSVParser;
+import org.apache.commons.csv.CSVRecord;
 import org.kie.api.KieServices;
 import org.kie.api.builder.KieBuilder;
 import org.kie.api.builder.KieFileSystem;
@@ -14,162 +13,63 @@ import org.kie.api.runtime.KieSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
 @Service
 public class RuleRunner {
 
-	private static final String PATH = System.getProperty("java.io.tmpdir")+File.separator;
-	
-	@Autowired
-	private AssetDAO assetDao;
-	
-	/**
-	 * 
-	 * @param fileName1
-	 * @param fileName2
-	 * @param month
-	 * @param year
-	 */
-	public void fireRulesHashMap(String fileName1, String fileName2, String month, String year) {
-		try {
-            if(!fileName2.contains(".drl"))
-            	fileName2 += ".drl";
-            KieSession session = getKieSession(PATH + fileName2);
-			
-			if(!fileName1.contains(".csv"))
-				fileName1 += ".csv";
-            File file = new File(PATH + fileName1);
-            BufferedReader reader = new BufferedReader(new FileReader(file));
-            String st;
-            
-            while((st = reader.readLine()) != null){
-            	if(st.startsWith("#"))
-            		continue;
-            	else {
-	                String[] temp = st.split(",");
+    @Autowired
+    private AssetDAO assetDao;
 
-	                ArrayList<java.math.BigDecimal> temp_arr = new ArrayList<>();
-	                temp_arr.add(new java.math.BigDecimal(temp[1]));
-	                temp_arr.add(new java.math.BigDecimal(temp[2]));
-	                temp_arr.add(new java.math.BigDecimal(temp[3]));
-	                temp_arr.add(new java.math.BigDecimal(temp[4]));
+    public List<CSVRecord> parseCsv(Path csvFileName) throws IOException {
+        CSVParser parser = CSVParser.parse(csvFileName, StandardCharsets.UTF_8, CSVFormat.EXCEL.withFirstRecordAsHeader());
+        return parser.getRecords();
+    }
 
-	                org.kie.api.runtime.rule.FactHandle handle = session.insert(temp_arr);
-
-	                org.kie.api.runtime.rule.FactHandle handle1 = session.insert(temp_arr.get(0));
-	                org.kie.api.runtime.rule.FactHandle handle2 = session.insert(temp_arr.get(1));
-	                org.kie.api.runtime.rule.FactHandle handle3 = session.insert(temp_arr.get(2));
-	                org.kie.api.runtime.rule.FactHandle handle4 = session.insert(temp_arr.get(3));
-	                
-	                session.fireAllRules(1);	              
-	                
-	                session.delete(handle);
-	                session.delete(handle1);
-	                session.delete(handle2);
-	                session.delete(handle3);
-	                session.delete(handle4);
-	                
-	                assetDao.addEmployee(temp_arr, Integer.parseInt(month), Integer.parseInt(year), temp[0]);
-	                
-            	}
-            }   
-            reader.close();
-		} catch (Exception e) {System.err.println(e.getMessage());}
-	}
-	
-	public void fireRulesHashMap2(String fileName1, String fileName2, String month, String year) {
-		try {
-            if(!fileName2.contains(".drl"))
-            	fileName2 += ".drl";
-            KieSession session = getKieSession(PATH + fileName2);
-			
-			if(!fileName1.contains(".csv"))
-				fileName1 += ".csv";
-            File file = new File(PATH + fileName1);
-            BufferedReader reader = new BufferedReader(new FileReader(file));
-            String st;
-            
-            //Pretty strait forward
-            java.math.BigDecimal totHWorkedInSidip = new java.math.BigDecimal(0);
-            //The list representing the list of employees
-            ArrayList<ArrayList<java.math.BigDecimal>> employee_list = new ArrayList<>();
-            //This loop calculates totHWorkedInSidip
-            while((st = reader.readLine()) != null){
-            	if(st.startsWith("#"))
-            		continue;
-            	else {
-	                String[] temp = st.split(",");
-	                //This list represents a single employee
-	                ArrayList<java.math.BigDecimal> temp_arr = new ArrayList<>();
-	                temp_arr.add(new java.math.BigDecimal(temp[1]));
-	                temp_arr.add(new java.math.BigDecimal(temp[2]));
-
-	                org.kie.api.runtime.rule.FactHandle handle = session.insert(temp_arr);
-	                org.kie.api.runtime.rule.FactHandle handle1 = session.insert(totHWorkedInSidip);
-	                
-	                session.fireAllRules(1);	              
-	                
-	                session.delete(handle);
-	                session.delete(handle1);
-	                
-	                employee_list.add(temp_arr);
-//	                assetDao.addEmployee(temp_arr, Integer.parseInt(month), Integer.parseInt(year), temp[0]);
-	                
-            	}
-            }   
-            reader.close();
-            
-            //Now lets calculate all other values for employees
-            for(ArrayList<java.math.BigDecimal> employee: employee_list) {
-            	org.kie.api.runtime.rule.FactHandle handle = session.insert(employee);
-            	org.kie.api.runtime.rule.FactHandle handle1 = session.insert(totHWorkedInSidip.doubleValue());
-                
-                session.fireAllRules(1);
-                session.delete(handle);
-                session.delete(handle1);
+    public void fireRulesHashMap2(Path inputFileName, Path ruleFileName, String month, String year) {
+        try {
+            KieSession session = getKieSession(ruleFileName);
+            List<CSVRecord> records = parseCsv(inputFileName);
+            List<EmployeeForDrools> employeeForDrools = records.stream().map(EmployeeForDrools::new).collect(Collectors.toList());
+            for (EmployeeForDrools employeeForDrool : employeeForDrools) {
+                session.insert(employeeForDrool);
             }
-            //Now calculate max(totEffect)
-            java.math.BigDecimal totEffect = new java.math.BigDecimal(0);
-            for(ArrayList<java.math.BigDecimal> employee: employee_list) {
-            	org.kie.api.runtime.rule.FactHandle handle = session.insert(totEffect);
-            	org.kie.api.runtime.rule.FactHandle handle1 = session.insert(employee);
-            	
-            	session.fireAllRules(1);
-            	
-            	session.delete(handle);
-            	session.delete(handle1);
+            session.fireAllRules();
+            for (EmployeeForDrools employeeForDrool : employeeForDrools) {
+                List<Double> kpis = new ArrayList<>(4);
+                final Map<String, Double> computedKpis = employeeForDrool.getKpiStore();
+                kpis.add(computedKpis.getOrDefault("kpi1", 0.0));
+                kpis.add(computedKpis.getOrDefault("kpi2", 0.0));
+                kpis.add(computedKpis.getOrDefault("kpi3", 0.0));
+                kpis.add(computedKpis.getOrDefault("kpi4", 0.0));
+                kpis.add(computedKpis.getOrDefault("kpiTot", 0.0));
+                assetDao.addEmployee(kpis, Integer.parseInt(month), Integer.parseInt(year), employeeForDrool.getCsv().get("EmployeeID"));
             }
-            
-            //Finally calculate the final KPI Value
-            for(ArrayList<java.math.BigDecimal> employee: employee_list) {
-            	org.kie.api.runtime.rule.FactHandle handle = session.insert(employee);
-            	org.kie.api.runtime.rule.FactHandle handle1 = session.insert(totEffect.doubleValue());
-            	org.kie.api.runtime.rule.FactHandle handle2 = session.insert(true);
-            	
-            	session.fireAllRules();
-            	
-            	session.delete(handle);
-            	session.delete(handle1);
-            	session.delete(handle2);
-            	assetDao.addEmployee(employee, Integer.parseInt(month), Integer.parseInt(year));
-            }
-		} catch (Exception e) {System.err.println(e.getMessage());}
-	}
-	
-	/**
-	 * 
-	 * @param ruleset
-	 * @return
-	 */
-	private static KieSession getKieSession(String ruleset) {
-		KieServices kieServices = KieServices.Factory.get();
-		KieFileSystem kfs = kieServices.newKieFileSystem();
-		File file = new File(ruleset);
-		org.kie.api.io.Resource resource = kieServices.getResources().newFileSystemResource(file).setResourceType(ResourceType.DRL);
-		kfs.write(resource);
-	
-		KieBuilder Kiebuilder = kieServices.newKieBuilder(kfs);
-		Kiebuilder.buildAll();
-		KieContainer kieContainer = kieServices.newKieContainer(kieServices.getRepository().getDefaultReleaseId());
-		return kieContainer.newKieSession();
-	}
+            session.destroy();
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+        }
+    }
+
+    /**
+     * @param ruleset
+     * @return
+     */
+    private static KieSession getKieSession(Path ruleset) {
+        KieServices kieServices = KieServices.Factory.get();
+        KieFileSystem kfs = kieServices.newKieFileSystem();
+        org.kie.api.io.Resource resource = kieServices.getResources().newFileSystemResource(ruleset.toFile()).setResourceType(ResourceType.DRL);
+        kfs.write(resource);
+
+        KieBuilder Kiebuilder = kieServices.newKieBuilder(kfs);
+        Kiebuilder.buildAll();
+        KieContainer kieContainer = kieServices.newKieContainer(kieServices.getRepository().getDefaultReleaseId());
+        return kieContainer.newKieSession();
+    }
 }

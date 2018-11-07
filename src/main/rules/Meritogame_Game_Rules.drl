@@ -1,0 +1,303 @@
+package Sample
+import com.techgap.droolsaverage.model.EmployeeForDrools;
+import java.util.HashMap;
+
+rule "hContractForMeritogame"
+when
+    $employee : EmployeeForDrools(
+        $sumHContractToWorkWeeklyByMonth: Double.parseDouble(csv.get("sumHContractToWorkWeeklyByMonth")),
+        kpiStore.get("hContractForMeritogame") == null
+    )
+then
+    System.err.println("Firing hContractForMeritogame for " + $employee.getCsv().get("EmployeeID"));
+    modify($employee){
+        setKpi("hContractForMeritogame", (52.0 / 12.0) * $sumHContractToWorkWeeklyByMonth * 0.88)
+    }
+end
+
+
+rule "hWorkedForMeritogame"
+when
+    $employee : EmployeeForDrools(
+        $hWorked : Double.parseDouble(csv.get("hWorked")),
+        $hContractForMeritogame : kpiStore["hContractForMeritogame"],
+        kpiStore.get("hWorkedForMeritogame") == null
+    )
+then
+    System.err.println("Firing hWorkedForMeritogame for " + $employee.getCsv().get("EmployeeID"));
+    modify($employee){
+        setKpi("hWorkedForMeritogame",  $hWorked  > ($hContractForMeritogame + 200.0) ? $hContractForMeritogame + 200 : $hWorked)
+    }
+end
+
+rule "availabilityScoreTmp"
+when
+    $employee: EmployeeForDrools(
+        $hWorkedForMeritogame: kpiStore["hWorkedForMeritogame"],
+        $hContractForMeritogame: kpiStore["hContractForMeritogame"],
+        kpiStore.get("availabilityScoreTmp") == null
+    )
+then
+    modify($employee){
+        setKpi("availabilityScoreTmp", $hContractForMeritogame <= 0 ? 0.0 : 100.0 * ($hWorkedForMeritogame / $hContractForMeritogame))
+    }
+end
+
+
+rule "totHWorkedInSidip"
+when
+    $employee : EmployeeForDrools(
+        kpiStore.get("totHWorkedInSidip") == null
+    )
+    $totHWorkedInSidip : Double()
+             from accumulate(
+                EmployeeForDrools(
+                    $value : kpiStore["hWorkedForMeritogame"]
+                ),
+                sum( $value )
+              )
+then
+    System.err.println("Firing totHWorkedInSidip for " + $employee.getCsv().get("EmployeeID"));
+    modify($employee){
+        setKpi("totHWorkedInSidip", $totHWorkedInSidip)
+    }
+end
+
+rule "totalEffect"
+when
+    $employee : EmployeeForDrools(
+        $totHWorkedInSidip : kpiStore["totHWorkedInSidip"],
+        $hWorkedForMeritogame : kpiStore["hWorkedForMeritogame"],
+        kpiStore.get("totalEffect") == null
+    )
+then
+    System.err.println("Firing totalEffect for " + $employee.getCsv().get("EmployeeID"));
+    modify($employee){
+        setKpi("totalEffect",  $totHWorkedInSidip <= 0 ? 0.0 : $hWorkedForMeritogame / $totHWorkedInSidip)
+    }
+end
+
+rule "zones"
+when
+    $employee : EmployeeForDrools(
+        kpiStore.get("zone1") == null
+    )
+    $zone1 : Double()
+             from accumulate(
+                EmployeeForDrools(
+                    $value : kpiStore["totalEffect"]
+                ),
+                max( $value )
+              )
+then
+    System.err.println("Firing zones for " + $employee.getCsv().get("EmployeeID"));
+    modify($employee){
+        setKpi("zone1", $zone1),
+        setKpi("zone2", 4.0 * $zone1 / 5.0),
+        setKpi("zone3", 2.0 * $zone1 / 5.0)
+    }
+end
+
+
+rule "employeeBonusValueForZone1"
+when
+    $employee : EmployeeForDrools(
+        $totalEffect: kpiStore["totalEffect"],
+        $zone2: kpiStore["zone2"],
+        $totalEffect > $zone2,
+        kpiStore.get("employeeBonusValue") == null
+    )
+then
+    modify($employee){
+        setKpi("employeeBonusValue", 20.0)
+    }
+end
+
+rule "employeeBonusValueForZone2"
+when
+    $employee : EmployeeForDrools(
+        $totalEffect: kpiStore["totalEffect"],
+        $zone3: kpiStore["zone3"],
+        $totalEffect > $zone3,
+        kpiStore.get("employeeBonusValue") == null
+    )
+then
+    modify($employee){
+        setKpi("employeeBonusValue", 15.0)
+    }
+end
+
+rule "employeeBonusValueForZone3"
+when
+    $employee : EmployeeForDrools(
+        $totalEffect: kpiStore["totalEffect"],
+        $zone3: kpiStore["zone3"],
+        $totalEffect <= $zone3,
+        kpiStore.get("employeeBonusValue") == null
+    )
+then
+    modify($employee){
+        setKpi("employeeBonusValue", 0.0)
+    }
+end
+
+rule "Availability KPI"
+when
+    $employee : EmployeeForDrools(
+        $employeeBonusValue: kpiStore["employeeBonusValue"],
+        $availabilityScoreTmp: kpiStore["availabilityScoreTmp"],
+        kpiStore.get("kpi1") == null
+    )
+then
+    modify($employee){
+        setKpi("kpi1", $employeeBonusValue + $availabilityScoreTmp),
+        setKpi("kpiTot", $employeeBonusValue + $availabilityScoreTmp)
+    }
+end
+
+
+rule "totalNumberNC"
+	when
+		$employee : EmployeeForDrools (
+			$weightNc1 : Double.parseDouble(csv.get("weightNc1")),
+			$weightNc2 : Double.parseDouble(csv.get("weightNc2")),
+			$weightNc3 : Double.parseDouble(csv.get("weightNc3")),
+			kpiStore.get("totalNumberNC") == null
+		)
+	then
+		System.err.println("Firing totalNumberNC for " + $employee.getCsv().get("EmployeeID"));
+		modify($employee) {
+			setKpi("totalNumberNC", $weightNc1 + $weightNc2 + $weightNc3)
+		}
+end
+
+rule "scoreNcTmp"
+	when
+		$employee : EmployeeForDrools (
+			$weightNc1 : Double.parseDouble(csv.get("weightNc1")),
+			$weightNc2 : Double.parseDouble(csv.get("weightNc2")),
+			$weightNc3 : Double.parseDouble(csv.get("weightNc3")),
+			kpiStore.get("scoreNcTmp") == null
+		)
+	then
+	System.err.println("Firing scoreNcTmp for " + $employee.getCsv().get("EmployeeID"));
+		modify($employee) {
+			setKpi("scoreNcTmp", ($weightNc1 * (-10)) + ($weightNc2 * (-25)) + ($weightNc3 * (-50))); 
+		}
+end
+
+rule "totalScoreNC"
+	when
+		$employee : EmployeeForDrools (
+			kpiStore.get("totalScoreNC") == null
+		)
+		$totalScoreNC : Double()
+		from accumulate (
+			EmployeeForDrools(
+				$value : kpiStore["scoreNcTmp"]
+			),
+			sum( $value )
+		)
+	then
+		System.err.println("Firing totalScoreNC for " + $employee.getCsv().get("EmployeeID"));
+		modify($employee) {
+			setKpi("totalScoreNC", $totalScoreNC)	
+		}
+end
+
+rule "totalEffectNC"
+	when
+		$employee : EmployeeForDrools (
+			$scoreNcTmp : kpiStore["scoreNcTmp"],
+			$totalScoreNc : kpiStore["totalScoreNC"],
+			kpiStore.get("totalEffectNC") == null
+		)
+	then
+		System.err.println("Firing totalEffectNC for " + $employee.getCsv().get("EmployeeID"));
+		modify($employee) {
+			setKpi("totalEffectNC", ($scoreNcTmp / $totalScoreNc) )
+		}
+end
+
+rule "zonesNC" 
+	when
+		$employee : EmployeeForDrools (
+			kpiStore.get("zone1") == null
+		)
+		$zone1 : Double()
+				 from accumulate (
+				 	EmployeeForDrools(
+				 		$value : kpiStore["totalEffectNC"]
+				 	),
+				 		max( $value )
+				 )
+	then
+		System.err.println("Firing zones for " + $employee.getCsv().get("EmployeeID"));
+		modify($employee){
+			setKpi("zone1", $zone1),
+			setKpi("zone2", $zone1 * 0.8),
+			setKpi("zone3", $zone1 * 0.4)
+		}
+end
+
+
+rule "employeeBonsValueForZone1NC"
+	when
+		$employee : EmployeeForDrools (
+			$totalEffectNC : kpiStore["totalEffectNC"],
+			$zone2 : kpiStore["zone2"], 
+			$totalEffectNC <= $zone2, 
+			kpiStore.get("employeeBonsValue") == null
+		)
+	then
+		System.err.println("Firing employeeBonusValueForZone1NC for " + $employee.getCsv().get("EmployeeID"));
+		modify($employee) {
+			setKpi("employeeBonsValue",-50.0)
+		}
+end
+
+rule "employeeBonsValueForZone2NC"
+	when
+		$employee : EmployeeForDrools (
+			$totalEffectNC : kpiStore["totalEffectNC"],
+			$zone3 : kpiStore["zone3"], 
+			$totalEffectNC <= $zone3, 
+			kpiStore.get("employeeBonsValue") == null
+		)
+	then
+		System.err.println("Firing employeeBonusValueForZone2NC for " + $employee.getCsv().get("EmployeeID"));
+		modify($employee) {
+			setKpi("employeeBonusValue",-20.0)
+		}
+end
+
+rule "employeeBonsValueForZone3NC"
+	when
+		$employee : EmployeeForDrools (
+			$totalEffectNC : kpiStore["totalEffectNC"],
+			$zone3 : kpiStore["zone3"], 
+			$zone3 < $totalEffectNC, 
+			kpiStore.get("employeeBonsValue") == null
+		)
+	then
+		System.err.println("Firing employeeBonusValueForZone3NC for " + $employee.getCsv().get("EmployeeID"));
+		modify($employee) {
+			setKpi("employeeBonsValue",0.0)
+		}
+end
+
+
+
+rule "Non Conformita KPI"
+	when
+		$employee : EmployeeForDrools (
+			$employeeBonusValue : kpiStore["employeeBonsValue"],
+			$totalScoreNC : kpiStore["totalScoreNC"],
+			kpiStore.get("kpi2") == null
+		)	
+	then
+		System.err.println("Firing Non Conformita KPI for " + $employee.getCsv().get("EmployeeID"));
+		modify($employee) {
+			setKpi("kpi2" , $totalScoreNC + $employeeBonusValue)
+		}
+end
