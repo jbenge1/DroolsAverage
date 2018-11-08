@@ -76,9 +76,10 @@ public class MainController {
         ruleRunner.fireRulesHashMap2(Paths.get(UploadController.UPLOADED_FOLDER, fileName1), Paths.get(UploadController.UPLOADED_FOLDER, fileName2), month, year);
         assetDAO.addRuleFile(fileName2, UploadController.UPLOADED_FOLDER, Integer.parseInt(month), Integer.parseInt(year));
         List<ArrayList<Object>> employees;
-        employees = assetDAO.getEmployeesList(Integer.parseInt(month), Integer.parseInt(year));
-        return new ModelAndView("employees", "employee", employees);
+        employees = assetDAO.getEmployeesListAdmin(Integer.parseInt(month), Integer.parseInt(year));
+        return new ModelAndView("employeesAdmin", "employee", employees);
     }
+    
     @RequestMapping("ViewEmployees")
     public ModelAndView viewEmployees(@RequestParam(required = false) String month,
     								  @RequestParam(required = false) String year) {
@@ -86,13 +87,30 @@ public class MainController {
     	employees = assetDAO.getEmployeesList(11, 2018);
     	return new ModelAndView("employees", "employee", employees);
     }
+    
+    @RequestMapping("ViewEmployeesAdmin")
+    public ModelAndView viewEmployeesAdmin(@RequestParam(required = false) String month,
+    								  	   @RequestParam(required = false) String year) {
+    	List<ArrayList<Object>> employees;
+    	employees = assetDAO.getEmployeesListAdmin(Integer.parseInt(month), Integer.parseInt(year));
+    	return new ModelAndView("employeesAdmin", "employee", employees);
+    }
     // ============================================================================================
 
     @GetMapping("/employeeAddForm")
     public String employeeAddForm() {
         return "employeeAddForm";
     }
-
+    
+    
+    @RequestMapping("/publish") 
+    public ModelAndView publishEmployees(@RequestParam(required = false) String month,
+		  	   					 		 @RequestParam(required = false) String year) {
+    	assetDAO.publish(11, 2018);
+    	List<ArrayList<Object>> employees;
+    	employees = assetDAO.getEmployeesList(Integer.parseInt(month), Integer.parseInt(year));
+    	return new ModelAndView("employees", "employee", employees);
+    }
 
     //This seems like a terrible idea
     //hmmmm....

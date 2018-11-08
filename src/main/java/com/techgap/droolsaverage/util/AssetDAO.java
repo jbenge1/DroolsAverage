@@ -26,6 +26,47 @@ public class AssetDAO {
     }
 
     public List<ArrayList<Object>> getEmployeesList(int month, int year) {
+    	query = "SELECT is_draft FROM employee_metrics;";
+    	List<Map<String,Object>> temp_bool = jdbcTemplate.queryForList(query);
+    	if((boolean)temp_bool.get(0).values().toArray()[0]) {
+    		return new ArrayList<ArrayList<Object>>();
+    	}
+    	
+        query = "SELECT * FROM employee_metrics WHERE year = ? AND month = ? ORDER BY kpi_tot DESC;";
+        List<Map<String, Object>> list = jdbcTemplate.queryForList(query, year, month);
+
+        ArrayList<ArrayList<Object>> retval = new ArrayList<>();
+
+        while (!list.isEmpty()) {
+            Object[] temp = list.get(0).values().toArray();
+            ArrayList<Object> tempEmp = new ArrayList<>();
+            tempEmp.add(temp[0]);
+            tempEmp.add(temp[1]);
+            tempEmp.add(temp[2]);
+            tempEmp.add(temp[5]);
+            tempEmp.add(temp[6]);
+            tempEmp.add(temp[7]);
+            tempEmp.add(temp[8]);
+
+            retval.add(tempEmp);
+            list.remove(0);
+        }
+        return retval;
+    }
+
+    public void publish(int month, int year) {
+    	System.err.println("HERE");
+    	query = "UPDATE employee_metrics SET is_draft = false WHERE year = ? AND month = ?;";
+    	jdbcTemplate.update(query, new Object[] {year, month});
+    	
+    }
+    /**
+     * 
+     * @param month
+     * @param year
+     * @return
+     */
+    public List<ArrayList<Object>> getEmployeesListAdmin(int month, int year) {   
         query = "SELECT * FROM employee_metrics WHERE year = ? AND month = ? ORDER BY kpi_tot DESC;";
         List<Map<String, Object>> list = jdbcTemplate.queryForList(query, year, month);
 
@@ -57,7 +98,7 @@ public class AssetDAO {
     public void addEmployee(List<Double> kpis, int month, int year, String name) {
         Object[] temp = new Object[]{kpis.get(0), kpis.get(1), month, year, kpis.get(2), kpis.get(3), kpis.get(4), name};
 
-        query = "INSERT INTO employee_metrics (kpi1, kpi2, month, year, kpi3, kpi4, kpi_tot, name)VALUES(?,?,?,?,?,?,?,?);";
+        query = "INSERT INTO employee_metrics (kpi1, kpi2, month, year, kpi3, kpi4, kpi_tot, name, is_draft)VALUES(?,?,?,?,?,?,?,?,true);";
 
         jdbcTemplate.update(query, temp);
     }
