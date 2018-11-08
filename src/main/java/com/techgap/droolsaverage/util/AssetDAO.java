@@ -9,6 +9,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
+
 @Repository
 public class AssetDAO {
 
@@ -109,10 +114,17 @@ public class AssetDAO {
      * @param month
      * @param year
      */
-    public void addRuleFile(String name, String location, int month, int year) {
-        Object[] temp = new Object[]{name, location, month, year};
+    public void addRuleFile(String nameRules, String location,String nameCsv, int month, int year) {
+    	String rules = "";
+    	String csv = "";
+    	try {
+    		rules = new String(Files.readAllBytes(Paths.get(location + nameRules)));
+    		csv   = new String(Files.readAllBytes(Paths.get(location + nameCsv)));
+    	}catch(IOException ne) {System.err.println("File not found");}
+    	
+    	Object[] temp = new Object[]{nameRules, location, month, year, rules, csv};
 
-        query = "INSERT INTO rule_files (name, location, month, year) VALUES (?,?,?,?);";
+        query = "INSERT INTO rule_files (name, location, month, year, rules, csv) VALUES (?,?,?,?,?,?);";
 
         jdbcTemplate.update(query, temp);
     }

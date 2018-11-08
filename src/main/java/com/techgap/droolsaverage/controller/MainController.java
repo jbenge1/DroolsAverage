@@ -72,9 +72,11 @@ public class MainController {
                                      @RequestParam(required = false) String fileName2,
                                      @RequestParam(required = false) String month,
                                      @RequestParam(required = false) String year) {
-
+//    	System.err.println(UploadController.UPLOADED_FOLDER);
+//    	System.err.println(fileName1);
+//    	System.err.println(fileName2);
         ruleRunner.fireRulesHashMap2(Paths.get(UploadController.UPLOADED_FOLDER, fileName1), Paths.get(UploadController.UPLOADED_FOLDER, fileName2), month, year);
-        assetDAO.addRuleFile(fileName2, UploadController.UPLOADED_FOLDER, Integer.parseInt(month), Integer.parseInt(year));
+        assetDAO.addRuleFile(fileName2, UploadController.UPLOADED_FOLDER,fileName1, Integer.parseInt(month), Integer.parseInt(year));
         List<ArrayList<Object>> employees;
         employees = assetDAO.getEmployeesListAdmin(Integer.parseInt(month), Integer.parseInt(year));
         return new ModelAndView("employeesAdmin", "employee", employees);
