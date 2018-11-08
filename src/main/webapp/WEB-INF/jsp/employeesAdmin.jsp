@@ -32,6 +32,7 @@ body {
 			<li><a href="/">Home</a></li>
 			<li><a href="/ViewEmployees">Employees</a></li>
 			<li><a href="/load">Upload</a></li>
+			<li><a href="/searchForRankings">Search</a></li>
 		</ul>
 		<form class="form-inline" method="POST" action="/publish">
 <!-- 			<label for="month">Month:</label> -->

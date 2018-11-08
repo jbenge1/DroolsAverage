@@ -33,9 +33,11 @@ public class AssetDAO {
     public List<ArrayList<Object>> getEmployeesList(int month, int year) {
     	query = "SELECT is_draft FROM employee_metrics;";
     	List<Map<String,Object>> temp_bool = jdbcTemplate.queryForList(query);
-    	if((boolean)temp_bool.get(0).values().toArray()[0]) {
-    		return new ArrayList<ArrayList<Object>>();
-    	}
+    	try {
+    		if((boolean)temp_bool.get(0).values().toArray()[0]) {
+    			return new ArrayList<ArrayList<Object>>();
+    		}
+    	}catch(ArrayIndexOutOfBoundsException e) {return new ArrayList<ArrayList<Object>>();}
     	
         query = "SELECT * FROM employee_metrics WHERE year = ? AND month = ? ORDER BY kpi_tot DESC;";
         List<Map<String, Object>> list = jdbcTemplate.queryForList(query, year, month);

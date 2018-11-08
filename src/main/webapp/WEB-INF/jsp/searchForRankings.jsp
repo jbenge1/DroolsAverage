@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<title>Upload</title>
+<title>Search</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 
@@ -37,15 +37,9 @@ body {
 	</nav>
 <div class="row col-sm-6"
 		style="border: 1px ridge #F93; padding:20px; float: none; margin: 0 auto;">
-	<h1 class="text-center" style="font-size:25px; font-family:Raleway">Spring Boot file upload example</h1>
+	<h1 class="text-center" style="font-size:25px; font-family:Raleway">Search for Rankings</h1>
 
-	<form method="POST" action="/upload" enctype="multipart/form-data">
-		<p>CSV file</p>
-		<input type="file" name="file1" class="btn btn-primary"/><br /> <br />
-		
-		<p>Rules file</p>
-		<input type="file" name="file2" class="btn btn-primary"/><br /> <br />
-		
+	<form method="POST" action="/search">
 		<p>Month</p>
 		<input type="text" name="month" class="form-control"/><br /> <br />
 		
