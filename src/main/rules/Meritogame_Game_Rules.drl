@@ -155,7 +155,6 @@ then
     }
 end
 
-
 rule "totalNumberNC"
 	when
 		$employee : EmployeeForDrools (
@@ -180,10 +179,10 @@ rule "scoreNcTmp"
 			kpiStore.get("scoreNcTmp") == null
 		)
 	then
-	System.err.println("Firing scoreNcTmp for " + $employee.getCsv().get("EmployeeID"));
-		modify($employee) {
-			setKpi("scoreNcTmp", ($weightNc1 * (-10)) + ($weightNc2 * (-25)) + ($weightNc3 * (-50))); 
-		}
+    	System.err.println("Firing scoreNcTmp for " + $employee.getCsv().get("EmployeeID"));
+        modify($employee) {
+            setKpi("scoreNcTmp", $weightNc1 * -10.0 + $weightNc2 * -25.0 + $weightNc3 * -50.0)
+        }
 end
 
 rule "totalScoreNC"
@@ -201,7 +200,7 @@ rule "totalScoreNC"
 	then
 		System.err.println("Firing totalScoreNC for " + $employee.getCsv().get("EmployeeID"));
 		modify($employee) {
-			setKpi("totalScoreNC", $totalScoreNC)	
+			setKpi("totalScoreNC", $totalScoreNC)
 		}
 end
 
@@ -219,10 +218,10 @@ rule "totalEffectNC"
 		}
 end
 
-rule "zonesNC" 
+rule "zonesNC"
 	when
 		$employee : EmployeeForDrools (
-			kpiStore.get("zone1") == null
+			kpiStore.get("zone1NC") == null
 		)
 		$zone1 : Double()
 				 from accumulate (
@@ -232,11 +231,11 @@ rule "zonesNC"
 				 		max( $value )
 				 )
 	then
-		System.err.println("Firing zones for " + $employee.getCsv().get("EmployeeID"));
+		System.err.println("Firing zonesNC for " + $employee.getCsv().get("EmployeeID"));
 		modify($employee){
-			setKpi("zone1", $zone1),
-			setKpi("zone2", $zone1 * 0.8),
-			setKpi("zone3", $zone1 * 0.4)
+			setKpi("zone1NC", $zone1),
+			setKpi("zone2NC", $zone1 * 0.8),
+			setKpi("zone3NC", $zone1 * 0.4)
 		}
 end
 
@@ -245,14 +244,14 @@ rule "employeeBonsValueForZone1NC"
 	when
 		$employee : EmployeeForDrools (
 			$totalEffectNC : kpiStore["totalEffectNC"],
-			$zone2 : kpiStore["zone2"], 
-			$totalEffectNC <= $zone2, 
-			kpiStore.get("employeeBonsValue") == null
+			$zone2 : kpiStore["zone2NC"],
+			$totalEffectNC > $zone2,
+			kpiStore.get("employeeBonusValueNC") == null
 		)
 	then
 		System.err.println("Firing employeeBonusValueForZone1NC for " + $employee.getCsv().get("EmployeeID"));
 		modify($employee) {
-			setKpi("employeeBonsValue",-50.0)
+			setKpi("employeeBonusValueNC", -50.0)
 		}
 end
 
@@ -260,14 +259,14 @@ rule "employeeBonsValueForZone2NC"
 	when
 		$employee : EmployeeForDrools (
 			$totalEffectNC : kpiStore["totalEffectNC"],
-			$zone3 : kpiStore["zone3"], 
-			$totalEffectNC <= $zone3, 
-			kpiStore.get("employeeBonsValue") == null
+			$zone3 : kpiStore["zone3NC"],
+			$totalEffectNC > $zone3,
+			kpiStore.get("employeeBonusValueNC") == null
 		)
 	then
 		System.err.println("Firing employeeBonusValueForZone2NC for " + $employee.getCsv().get("EmployeeID"));
 		modify($employee) {
-			setKpi("employeeBonusValue",-20.0)
+			setKpi("employeeBonusValueNC", -20.0)
 		}
 end
 
@@ -275,14 +274,14 @@ rule "employeeBonsValueForZone3NC"
 	when
 		$employee : EmployeeForDrools (
 			$totalEffectNC : kpiStore["totalEffectNC"],
-			$zone3 : kpiStore["zone3"], 
-			$zone3 < $totalEffectNC, 
-			kpiStore.get("employeeBonsValue") == null
+			$zone3 : kpiStore["zone3NC"],
+			$totalEffectNC <= $zone3,
+			kpiStore.get("employeeBonusValueNC") == null
 		)
 	then
 		System.err.println("Firing employeeBonusValueForZone3NC for " + $employee.getCsv().get("EmployeeID"));
 		modify($employee) {
-			setKpi("employeeBonsValue",0.0)
+			setKpi("employeeBonusValueNC",0.0)
 		}
 end
 
@@ -291,13 +290,13 @@ end
 rule "Non Conformita KPI"
 	when
 		$employee : EmployeeForDrools (
-			$employeeBonusValue : kpiStore["employeeBonsValue"],
-			$totalScoreNC : kpiStore["totalScoreNC"],
+			$employeeBonusValue : kpiStore["employeeBonusValueNC"],
+			$scoreNcTmp : kpiStore["scoreNcTmp"],
 			kpiStore.get("kpi2") == null
-		)	
+		)
 	then
 		System.err.println("Firing Non Conformita KPI for " + $employee.getCsv().get("EmployeeID"));
 		modify($employee) {
-			setKpi("kpi2" , $totalScoreNC + $employeeBonusValue)
+			setKpi("kpi2" , $scoreNcTmp + $employeeBonusValue)
 		}
 end
