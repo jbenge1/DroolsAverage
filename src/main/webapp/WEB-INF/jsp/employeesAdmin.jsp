@@ -33,15 +33,8 @@ body {
 			<li><a href="/ViewEmployees">Employees</a></li>
 			<li><a href="/load">Upload</a></li>
 			<li><a href="/searchForRankings">Search</a></li>
+			<li><a href="/publishRankings">Publish</a></li>
 		</ul>
-		<form class="form-inline" method="POST" action="/publish">
-<!-- 			<label for="month">Month:</label> -->
-			<input class="form-control mr-sm-1" type="text" placeholder="Month" id="month" name="month">
-<!-- 			<label for="month">Year:</label> -->
-			<input class="form-control mr-sm-1" type="text" placeholder="Year" id="year" name="year">
-			<button class="btn btn-outline-success my-1 my-sm-0" type="submit">Publish</button>	
-		</form>
-
 		<div class="container">
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="logout"><span

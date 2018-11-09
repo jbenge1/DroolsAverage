@@ -101,11 +101,15 @@ public class MainController {
         return "employeeAddForm";
     }
     
+    @GetMapping("/publishRankings")
+    public String publishRankings() {
+    	return "publishRankings";
+    }
     
     @RequestMapping("/publish") 
     public ModelAndView publishEmployees(@RequestParam(required = false) String month,
 		  	   					 		 @RequestParam(required = false) String year) {
-    	assetDAO.publish(11, 2018);
+    	assetDAO.publish(Integer.parseInt(month), Integer.parseInt(year));
     	List<ArrayList<Object>> employees;
     	employees = assetDAO.getEmployeesList(Integer.parseInt(month), Integer.parseInt(year));
     	return new ModelAndView("employees", "employee", employees);

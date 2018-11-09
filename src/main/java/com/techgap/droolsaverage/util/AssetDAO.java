@@ -1,5 +1,6 @@
 package com.techgap.droolsaverage.util;
 
+import org.postgresql.util.PSQLException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -123,6 +124,10 @@ public class AssetDAO {
     		rules = new String(Files.readAllBytes(Paths.get(location + nameRules)));
     		csv   = new String(Files.readAllBytes(Paths.get(location + nameCsv)));
     	}catch(IOException ne) {System.err.println("File not found");}
+    	
+    	query = "DELETE FROM rule_files WHERE name = ? AND month = ? AND year = ?;";
+    	Object[] temp1 = new Object[] {nameRules, month ,year};
+    	jdbcTemplate.update(query, temp1);
     	
     	Object[] temp = new Object[]{nameRules, location, month, year, rules, csv};
 
