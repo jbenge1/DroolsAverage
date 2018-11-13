@@ -96,6 +96,25 @@ public class AssetDAO {
         }
         return retval;
     }
+    
+    public List<ArrayList<Object>> getRankings() {
+        query = "select distinct name, month, year from rule_files;";
+        List<Map<String, Object>> list = jdbcTemplate.queryForList(query);
+        
+        ArrayList<ArrayList<Object>> retval = new ArrayList<>();
+        while(!list.isEmpty()) {
+        	Object[] temp  = list.get(0).values().toArray();
+        	ArrayList<Object> tempRank = new ArrayList<>();
+        	tempRank.add(temp[0]);
+        	tempRank.add(temp[1]);
+        	tempRank.add(temp[2]);
+        	
+        	retval.add(tempRank);
+        	list.remove(0);
+        }
+        
+        return retval;
+    }
 
     /**
      * @param kpis
@@ -147,4 +166,5 @@ public class AssetDAO {
         query = "INSERT INTO authorities (username, authority) values (?, ?);";
         jdbcTemplate.update(query, temp);
     }
+    
 }

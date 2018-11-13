@@ -136,4 +136,11 @@ public class MainController {
         employees = assetDAO.getEmployeesList(Integer.parseInt(month), Integer.parseInt(year));
         return new ModelAndView("employees", "employee", employees);
     }
+    
+    @RequestMapping("/rankings")
+    public ModelAndView rankings() {
+    	List<ArrayList<Object>> rank;
+    	rank = assetDAO.getRankings();
+    	return new ModelAndView("rankings", "rank", rank);
+    }
 }
