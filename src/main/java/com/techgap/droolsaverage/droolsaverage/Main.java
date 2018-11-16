@@ -24,6 +24,6 @@ public class Main{
 	
     public static void main(String[] argv) {
     	
-    	ctx = SpringApplication.run(Main.class, argv);
+    	SpringApplication.run(Main.class, argv);
     }
 }
