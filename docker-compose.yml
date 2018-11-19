@@ -6,16 +6,19 @@ services:
     build:
         context: ./
         dockerfile: Dockerfile
+    depends_on:
+        - db
     ports:
         - 8080:8080
   db:
-    image: postgres:11-alpine
+#    image: postgres:11-alpine
+    image: postgres
     environment:
       POSTGRES_DB: 'droolsTestDB'
       POSTGRES_USER: 'postgres'
       POSTGRES_PASSWORD: 'postgres'
-    build:
-       context: ./
-       dockerfile: DockerfilePSQL
+#    build:
+      # context: ./
+      # dockerfile: DockerfilePSQL
     ports:
         - "5432:5432"
