@@ -14,5 +14,8 @@ services:
       POSTGRES_DB: 'droolsTestDB'
       POSTGRES_USER: 'postgres'
       POSTGRES_PASSWORD: 'postgres'
+    build:
+       context: ./
+       dockerfile: DockerfilePSQL
     ports:
-    - "5432:5432"
+        - "5432:5432"

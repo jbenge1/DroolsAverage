@@ -1,0 +1,4 @@
+FROM postgres
+MAINTAINER (justin benge) <j.benge@techgapsolutions.com>
+ENV POSTGRES_DB droolsTestDB
+COPY init.sql /docker-entrypoint-initdb.d/
