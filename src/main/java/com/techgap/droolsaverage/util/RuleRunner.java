@@ -32,7 +32,7 @@ public class RuleRunner {
         return parser.getRecords();
     }
 
-    public void fireRulesHashMap2(Path inputFileName, Path ruleFileName, String month, String year) {
+    public void fireRulesHashMap2(Path inputFileName, Path ruleFileName, String month, String year) {    	
         try {
             KieSession session = getKieSession(ruleFileName);
             List<CSVRecord> records = parseCsv(inputFileName);

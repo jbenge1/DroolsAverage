@@ -1,0 +1,32 @@
+package Sample
+import com.techgap.droolsaverage.model.EmployeeForDrools;
+import java.util.HashMap;
+
+rule "Test Rule 1"
+
+    when
+    	$employee : EmployeeForDrools(
+        $sumHContractToWorkWeeklyByMonth: Double.parseDouble(csv.get("sumHContractToWorkWeeklyByMonth")),
+        kpiStore.get("hContractForMeritogame") == null
+    )
+    then
+    	modify($employee){
+        setKpi("hContractForMeritogame", 10.0)
+    }
+
+end
+
+rule "Test Rule 2"
+    
+    when
+    	$employee : EmployeeForDrools(
+        	$hWorked : Double.parseDouble(csv.get("hWorked")),
+        	$hContractForMeritogame : kpiStore["hContractForMeritogame"],
+        	kpiStore.get("hWorkedForMeritogame") == null
+    	)
+    then
+    	modify($employee){
+        	setKpi("hWorkedForMeritogame",  15.0)
+    	}
+
+end
