@@ -6,7 +6,7 @@
 	<groupId>com.techgap.DroolsAverage</groupId>
 	<artifactId>DroolsAverage</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
- 	<packaging>jar</packaging> 
+	<packaging>jar</packaging>
 	<name>DroolsAverage</name>
 	<url>http://maven.apache.org</url>
 
@@ -142,9 +142,20 @@
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 
+		<dependency>
+			<groupId>org.flywaydb</groupId>
+			<artifactId>flyway-core</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>io.zonky.test</groupId>
+			<artifactId>embedded-database-spring-test</artifactId>
+			<version>1.1.0</version>
+			<scope>test</scope>
+		</dependency>
 
 	</dependencies>
-	
+
 	<build>
 		<plugins>
 			<plugin>

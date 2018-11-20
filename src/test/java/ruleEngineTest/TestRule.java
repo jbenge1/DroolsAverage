@@ -6,18 +6,39 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.junit.Before;
 import org.junit.Test;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.junit.runner.RunWith;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.datasource.SingleConnectionDataSource;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.techgap.droolsaverage.util.AssetDAO;
 import com.techgap.droolsaverage.util.RuleRunner;
 
+
+@RunWith( SpringJUnit4ClassRunner.class )
+@ContextConfiguration
 public class TestRule {
 
-	RuleRunner ruleRunner = new RuleRunner();
+	private RuleRunner ruleRunner = new RuleRunner();
+	private AssetDAO assetDao; 
+
+	@Before
+	public void init() {
+		SingleConnectionDataSource ds = new SingleConnectionDataSource();
+		ds.setDriverClassName("org.postgresql.Driver");
+		ds.setUrl("jdbc:postgresql://localhost/droolsTestDB");
+//		ds.setUrl("jdbc:postgresql://db/droolsTestDB");
+		ds.setUsername("postgres");
+		ds.setPassword("postgres");
+		
+		JdbcTemplate jdbcTemplate = new JdbcTemplate(ds);
+		
+		assetDao = new AssetDAO(jdbcTemplate);
+	}
 	
-	@Autowired
-    private AssetDAO assetDao;
 	
 	@Test
     public void testSimpleRule() throws Exception {
